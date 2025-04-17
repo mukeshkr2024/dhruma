@@ -51,16 +51,14 @@ export const CustomFilmTicket = () => {
                     {/* Left side with location, duration, dates */}
                     <div className="w-full sm:w-[71.5%]">
                         <div className="flex flex-col sm:flex-row justify-between w-full min-h-[60px] sm:min-h-[83px]">
-                            <motion.div whileHover={{ scale: 1.05 }}
-                                transition={{ type: "spring", stiffness: 400, damping: 10 }} className="border-t flex-1 flex items-center border-r justify-center gap-1.5 py-2 sm:py-0">
+                            <div className="border-t flex-1 flex items-center border-r justify-center gap-1.5 py-2 sm:py-0">
                                 <img src="/icons/map.svg" alt="" className="h-4 sm:h-5" />
                                 <span className="uppercase text-sm sm:text-lg md:text-xl font-secondary text-[#224095] font-semibold">
                                     Darjeeling
                                 </span>
-                            </motion.div>
-                            <motion.div
-                                whileHover={{ scale: 1.05 }}
-                                transition={{ type: "spring", stiffness: 400, damping: 10 }} className="flex-1 relative max-w-full sm:max-w-40 border-t border-r flex items-center justify-center py-2 sm:py-0">
+                            </div>
+                            <div
+                                className="flex-1 relative max-w-full sm:max-w-40 border-t border-r flex items-center justify-center py-2 sm:py-0">
                                 <span className="uppercase text-sm sm:text-lg md:text-xl font-secondary text-[#224095] font-semibold">
                                     3 Day
                                 </span>
@@ -69,10 +67,9 @@ export const CustomFilmTicket = () => {
                                     alt=""
                                     className="hidden sm:block size-20 md:size-24 lg:size-32 absolute bottom-2 sm:bottom-4 -right-[30px] sm:-right-[45px] md:-right-[62px]"
                                 />
-                            </motion.div>
-                            <motion.div
-                                whileHover={{ scale: 1.05 }}
-                                transition={{ type: "spring", stiffness: 400, damping: 10 }}
+                            </div>
+                            <div
+
                                 className="flex-1 flex items-center border-t justify-center py-2 sm:py-0">
                                 <span className="uppercase text-sm sm:text-lg md:text-xl font-secondary text-[#224095] font-semibold">
                                     <span>
@@ -84,7 +81,7 @@ export const CustomFilmTicket = () => {
                                     </span>{" "}
                                     June
                                 </span>
-                            </motion.div>
+                            </div>
                         </div>
                     </div>
 
