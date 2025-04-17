@@ -1,7 +1,35 @@
+@import url("https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap");
 @import "tailwindcss";
+
+@font-face {
+  font-family: "NimbusSanTBlaExt";
+  src: url("/fonts/NimbusSanTBlaExt.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@theme {
+  --font-primary: "NimbusSanTBlaExt", sans-serif;
+  --font-secondary: "Geist", sans-serif;
+  --primary-color: #224095;
+}
 
 body {
   width: 100%;
   height: 100%;
   margin: 0;
+}
+
+@layer components {
+  .primary-heading {
+    @apply text-[var(--primary-color)] font-primary text-5xl font-normal uppercase;
+  }
+
+  .paragraph_primary {
+    @apply font-normal font-secondary;
+  }
+
+  .section_primary {
+    @apply flex max-w-6xl mx-auto py-20;
+  }
 }

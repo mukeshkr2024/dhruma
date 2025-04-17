@@ -1,5 +1,6 @@
 import { PropsWithChildren } from "react"
 import { NavBar } from "../components/navbar/NavBar"
+import { Footer } from "../components/footer/Footer"
 
 export const RootLayout = ({ children }: PropsWithChildren) => {
     return (
@@ -8,6 +9,7 @@ export const RootLayout = ({ children }: PropsWithChildren) => {
             <main>
                 {children}
             </main>
+            <Footer />
         </div>
     )
 }
