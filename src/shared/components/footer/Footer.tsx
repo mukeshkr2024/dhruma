@@ -73,7 +73,7 @@ export const Footer = () => {
                     alt=""
                     className="absolute h-64 md:h-96 bottom-0 left-1/2 transform -translate-x-1/2 opacity-30 md:opacity-100"
                 />
-
+                {/* 
                 <motion.div
                     className="text-white text-center mt-12 relative z-10"
                     initial={{ opacity: 0 }}
@@ -82,7 +82,7 @@ export const Footer = () => {
                     viewport={{ once: true }}
                 >
                     <p className="text-sm">© {new Date().getFullYear()} Dhruma Film Festival. All rights reserved.</p>
-                </motion.div>
+                </motion.div> */}
             </div>
         </footer>
     )
