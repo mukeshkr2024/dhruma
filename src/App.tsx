@@ -1,4 +1,4 @@
-import { Home } from "./features/index"
+import { Home } from "./features/components/index"
 import { RootLayout } from "./shared/layouts/RootLayout"
 
 export const App = () => {
