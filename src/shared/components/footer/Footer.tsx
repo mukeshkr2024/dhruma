@@ -1,6 +1,7 @@
 "use client"
 
 import { motion } from "framer-motion"
+import { useEffect, useState } from "react"
 
 const navLinks = [
     { label: "Home" },
@@ -12,6 +13,14 @@ const navLinks = [
 ]
 
 export const Footer = () => {
+    const [show, setShow] = useState(false)
+
+    useEffect(() => {
+        const timer = setTimeout(() => setShow(true), 1000)
+        return () => clearTimeout(timer)
+    }, [])
+
+    if (!show) return null
     const columnCount = 3
     const navLinksColumns = Array.from({ length: columnCount }, (_, i) =>
         navLinks.filter((_, index) => index % columnCount === i),
