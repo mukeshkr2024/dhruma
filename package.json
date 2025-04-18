@@ -11,6 +11,8 @@
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.4",
+    "@tanstack/react-router": "^1.116.0",
+    "@tanstack/react-router-devtools": "^1.116.0",
     "framer-motion": "^12.7.4",
     "lucide-react": "^0.488.0",
     "react": "^19.0.0",
@@ -19,6 +21,7 @@
   },
   "devDependencies": {
     "@eslint/js": "^9.21.0",
+    "@tanstack/router-plugin": "^1.116.1",
     "@types/node": "^22.14.1",
     "@types/react": "^19.0.10",
     "@types/react-dom": "^19.0.4",

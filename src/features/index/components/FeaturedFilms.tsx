@@ -41,7 +41,11 @@ const films: {
         },
     ]
 
-const FeaturedFilms = () => {
+const FeaturedFilms = ({
+    label
+}: {
+    label?: string
+}) => {
     const containerRef = useRef<HTMLDivElement>(null)
     const [duplicates, setDuplicates] = useState(2)
     const [isHovered, setIsHovered] = useState<number | null>(null)
@@ -80,15 +84,15 @@ const FeaturedFilms = () => {
             transition={{ duration: 0.8 }}
             viewport={{ once: true, margin: "-100px" }}
         >
-            <motion.h2
+            {label && <motion.h2
                 className="primary-heading text-center mb-12"
                 initial={{ y: 30, opacity: 0 }}
                 whileInView={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.5 }}
                 viewport={{ once: true }}
             >
-                Featured Films
-            </motion.h2>
+                {label}
+            </motion.h2>}
 
             <div
                 className="animate-carousel flex  px-4"

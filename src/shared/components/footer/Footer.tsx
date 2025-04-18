@@ -12,7 +12,6 @@ const navLinks = [
 ]
 
 export const Footer = () => {
-    // Distribute links across 3 columns
     const columnCount = 3
     const navLinksColumns = Array.from({ length: columnCount }, (_, i) =>
         navLinks.filter((_, index) => index % columnCount === i),
@@ -23,66 +22,110 @@ export const Footer = () => {
         visible: {
             opacity: 1,
             transition: {
-                staggerChildren: 0.1,
-                delayChildren: 0.2,
+                staggerChildren: 0.08,
+                delayChildren: 0.1,
+                duration: 0.6,
+                ease: "easeOut",
+            },
+        },
+    }
+
+    const columnVariants = {
+        hidden: { opacity: 0 },
+        visible: {
+            opacity: 1,
+            transition: {
+                staggerChildren: 0.06,
+                delayChildren: 0.1,
             },
         },
     }
 
     const itemVariants = {
-        hidden: { y: 20, opacity: 0 },
-        visible: { y: 0, opacity: 1 },
+        hidden: { opacity: 0, y: 10 },
+        visible: {
+            opacity: 1,
+            y: 0,
+            transition: {
+                type: "spring",
+                stiffness: 260,
+                damping: 20,
+            },
+        },
+    }
+
+    const imageVariants = {
+        hidden: { opacity: 0, scale: 0.95 },
+        visible: {
+            opacity: 1,
+            scale: 1,
+            transition: {
+                duration: 1.2,
+                ease: [0.25, 0.1, 0.25, 1.0], // Custom easing for a more natural feel
+            },
+        },
+    }
+
+    const footerBgVariants = {
+        hidden: { opacity: 0, y: 20 },
+        visible: {
+            opacity: [0, 0.3, 1],
+            y: 0,
+            transition: {
+                duration: 1.5,
+                times: [0, 0.5, 1],
+                ease: "easeOut",
+            },
+        },
     }
 
     return (
         <footer className="w-full">
             <motion.div
                 className="w-full bg-[url(/footer_img.png)] bg-cover bg-no-repeat bg-center h-[200px] md:h-[300px] flex flex-col items-center justify-center"
-                initial={{ opacity: 0, scale: 0.95 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.8 }}
+                initial="hidden"
+                whileInView="visible"
                 viewport={{ once: true, margin: "-100px" }}
+                variants={imageVariants}
             />
 
-            <div className="bg-[#304FA8] w-full min-h-[350px] md:min-h-[450px] relative px-4 md:px-8 py-8 md:py-12">
+            <div className="bg-[#304FA8] w-full min-h-[350px] md:min-h-[450px] relative px-4 md:px-8 py-8 md:py-12 overflow-hidden">
                 <motion.div
-                    className="grid grid-cols-1 md:grid-cols-3 gap-6 text-white max-w-4xl mx-auto"
+                    className="grid grid-cols-1 md:grid-cols-3 gap-6 text-white max-w-4xl mx-auto relative z-10"
                     variants={containerVariants}
                     initial="hidden"
                     whileInView="visible"
                     viewport={{ once: true, margin: "-50px" }}
                 >
                     {navLinksColumns.map((column, colIndex) => (
-                        <div key={colIndex} className="flex flex-col items-center md:items-start">
+                        <motion.div key={colIndex} className="flex flex-col items-center md:items-start" variants={columnVariants}>
                             {column.map((item, index) => (
                                 <motion.p
                                     key={index}
                                     className="mb-3 hover:text-yellow-200 transition-colors duration-300 cursor-pointer"
                                     variants={itemVariants}
-                                    whileHover={{ x: 5 }}
+                                    whileHover={{
+                                        x: 5,
+                                        textShadow: "0 0 8px rgba(255,255,255,0.5)",
+                                        transition: { type: "spring", stiffness: 400, damping: 10 },
+                                    }}
                                 >
                                     {item.label}
                                 </motion.p>
                             ))}
-                        </div>
+                        </motion.div>
                     ))}
                 </motion.div>
 
-                <img
+                <motion.img
                     src="/footer_bg.png"
                     alt=""
-                    className="absolute h-64 md:h-96 bottom-0 left-1/2 transform -translate-x-1/2 opacity-30 md:opacity-100"
-                />
-                {/* 
-                <motion.div
-                    className="text-white text-center mt-12 relative z-10"
-                    initial={{ opacity: 0 }}
-                    whileInView={{ opacity: 1 }}
-                    transition={{ delay: 0.5, duration: 0.5 }}
+                    className="absolute h-64 md:h-96 bottom-0 left-1/2 transform -translate-x-1/2 md:opacity-100"
+                    variants={footerBgVariants}
+                    initial="hidden"
+                    whileInView="visible"
                     viewport={{ once: true }}
-                >
-                    <p className="text-sm">© {new Date().getFullYear()} Dhruma Film Festival. All rights reserved.</p>
-                </motion.div> */}
+                />
             </div>
         </footer>
     )
