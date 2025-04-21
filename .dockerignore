@@ -1,0 +1,17 @@
+# Node modules
+node_modules
+npm-debug.log
+
+# Build output
+dist
+
+# OS and IDE files
+.DS_Store
+.env
+*.swp
+*.swo
+.vscode
+.idea
+
+# Docker-related files (if you want to keep them local)
+docker-compose.override.yml
