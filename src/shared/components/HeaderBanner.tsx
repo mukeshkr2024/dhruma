@@ -2,6 +2,8 @@
 
 import { useEffect, useRef, useState } from "react"
 import { motion } from "framer-motion"
+import { Link } from "@tanstack/react-router"
+
 
 export const HeaderBanner = () => {
     const containerRef = useRef<HTMLDivElement>(null)
@@ -54,13 +56,14 @@ export const HeaderBanner = () => {
                             ref={index === 0 ? innerRef : undefined}
                             whileHover={{ scale: 1.05 }}
                         >
-                            <motion.a
-                                href="/submit"
+                            <motion.div
                                 className="font-secondary font-medium hover:underline"
                                 whileTap={{ scale: 0.95 }}
                             >
-                                Film Submissions Open till 15th May ⚡️ Click here to submit
-                            </motion.a>
+                                <Link to="/film-lineup">
+                                    Film Submissions Open till 15th May ⚡️ Click here to submit
+                                </Link>
+                            </motion.div>
                         </motion.div>
                     ))}
             </div>

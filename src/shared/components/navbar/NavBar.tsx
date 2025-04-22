@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react"
 import { motion, AnimatePresence } from "framer-motion"
+import { Link } from "@tanstack/react-router"
 
 const navLinks: { name: string; path: string }[] = [
     {
@@ -142,9 +143,8 @@ export const NavBar = () => {
                 <div className="hidden md:flex items-center gap-x-12">
                     <div className="flex items-center gap-x-12">
                         {navLinks.map((link) => (
-                            <motion.a
+                            <motion.div
                                 key={link.name}
-                                href={link.path}
                                 className="uppercase hover:text-[#224095] transition-colors duration-300"
                                 variants={linkVariants}
                                 whileHover={{
@@ -152,8 +152,10 @@ export const NavBar = () => {
                                     transition: { type: "spring", stiffness: 400, damping: 10 },
                                 }}
                             >
-                                {link.name}
-                            </motion.a>
+                                <Link to={link.path}>
+                                    {link.name}
+                                </Link>
+                            </motion.div>
                         ))}
                     </div>
 
@@ -188,16 +190,19 @@ export const NavBar = () => {
                     >
                         <div className="flex flex-col py-4 px-6">
                             {navLinks.map((link, index) => (
-                                <motion.a
+                                <motion.div
                                     key={link.name}
-                                    href={link.path}
                                     className="py-3 uppercase border-b border-gray-200 last:border-0"
                                     custom={index}
                                     variants={mobileNavItemVariants}
                                     onClick={() => setIsOpen(false)}
                                 >
-                                    {link.name}
-                                </motion.a>
+
+                                    <Link to={link.path}>
+                                        {link.name}
+                                    </Link>
+
+                                </motion.div>
                             ))}
                             <motion.div
                                 className="flex flex-col gap-4 mt-4"

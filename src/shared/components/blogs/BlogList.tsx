@@ -78,15 +78,23 @@ const itemVariants = {
 export const BlogList = () => {
     return (
         <motion.div
-            className="grid w-full grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6 lg:gap-8"
+            className="grid w-full grid-cols-1 gap-3
+                            sm:grid-cols-2 sm:gap-4
+                            md:grid-cols-2 md:gap-5
+                            lg:grid-cols-3 lg:gap-6
+                            xl:grid-cols-4 xl:gap-8"
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, amount: 0.1 }}
+            viewport={{ once: true, margin: "100px" }}
         >
             {blogs.map((blog, index) => (
-                <motion.div key={index} variants={itemVariants}>
-                    <BlogCard title={blog.title} description={blog.description} imgSrc={`/blog_1.png`} />
+                <motion.div key={index} variants={itemVariants} className="h-full">
+                    <BlogCard
+                        title={blog.title}
+                        description={blog.description}
+                        imgSrc={`/blog_1.png`}
+                    />
                 </motion.div>
             ))}
         </motion.div>
