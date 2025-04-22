@@ -17,7 +17,7 @@ export const BlogCard = ({ title, description, imgSrc }: BlogCardProps) => {
                 <motion.img
                     src={imgSrc}
                     alt={title}
-                    className="rounded-2xl w-full h-auto aspect-video object-cover"
+                    className="rounded-2xl w-full h-[350px] object-cover"
                     whileHover={{ scale: 1.05 }}
                     transition={{ duration: 0.3 }}
                 />

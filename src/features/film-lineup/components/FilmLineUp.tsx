@@ -134,7 +134,7 @@ export const FilmLineUp = () => {
                             whileHover={{ scale: 1.05 }}
                             whileTap={{ scale: 0.95 }}
                             className={`border rounded-full px-3 py-1.5 md:px-6 md:py-2 font-secondary text-xs md:text-sm cursor-pointer transition-all ${activeCategory === category
-                                ? "bg-gradient-to-r from-[#FFABAB] via-[#ABFFC0] to-[#FFABFF] text-black border-transparent"
+                                ? "border-[#FF8B17]"
                                 : "border-[#B9B9B9] hover:border-[#FF8B17]"
                                 }`}
                             onClick={() => setActiveCategory(category)}

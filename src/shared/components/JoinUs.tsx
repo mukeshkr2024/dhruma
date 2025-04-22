@@ -4,7 +4,7 @@ const fadeInUp = (delay = 0) => ({
     initial: { opacity: 0, y: 50 },
     whileInView: { opacity: 1, y: 0 },
     transition: { duration: 0.6, delay },
-    viewport: { once: true, amount: 0.3 },
+    viewport: { once: true, amount: 0.5 }, // Increased viewport threshold
 });
 
 export const JoinUs = () => {
@@ -17,27 +17,28 @@ export const JoinUs = () => {
                 Join us
             </motion.h2>
 
-            <motion.div
-                className="flex flex-col md:flex-row gap-6 md:gap-14"
-                {...fadeInUp(0.4)}
-            >
-                <Ticket
-                    title="Flexible passes for every film lover"
-                    passes={["Single Screening", "Day Pass", "Full Festival Pass"]}
-                    price="$99"
-                    label="Passes"
-                    bgImage="/join_1_bg.svg"
-                />
-                <Ticket
-                    title="All-access experience."
-                    passes={[
-                        "Enjoy priority seating, exclusive events, and full access to all screenings throughout the festival",
-                    ]}
-                    price="$199"
-                    label="VIP Pass"
-                    bgImage="/join_2_bg.svg"
-                />
-            </motion.div>
+            <div className="flex flex-col md:flex-row gap-6 md:gap-14">
+                <motion.div {...fadeInUp(0.4)}>
+                    <Ticket
+                        title="Flexible passes for every film lover"
+                        passes={["Single Screening", "Day Pass", "Full Festival Pass"]}
+                        price="$99"
+                        label="Passes"
+                        bgImage="/join_1_bg.svg"
+                    />
+                </motion.div>
+                <motion.div {...fadeInUp(0.6)}>
+                    <Ticket
+                        title="All-access experience."
+                        passes={[
+                            "Enjoy priority seating, exclusive events, and full access to all screenings throughout the festival",
+                        ]}
+                        price="$199"
+                        label="VIP Pass"
+                        bgImage="/join_2_bg.svg"
+                    />
+                </motion.div>
+            </div>
         </motion.section>
     );
 };
@@ -54,7 +55,9 @@ const Ticket = ({ title, passes, price, label, bgImage }: TicketProps) => {
     return (
         <div
             className="w-[315px] h-[515px] bg-center bg-cover bg-no-repeat"
-            style={{ backgroundImage: `url(${bgImage})` }}
+            style={{
+                backgroundImage: `url(${bgImage})`,
+            }}
         >
             <div className="w-full h-full flex flex-col justify-between p-10">
                 <h4 className="font-primary text-2xl uppercase text-white leading-tight">

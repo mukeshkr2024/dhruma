@@ -2,7 +2,7 @@
 import React, { Suspense, useRef } from "react"
 import { motion, useInView, useScroll, useTransform } from "framer-motion"
 import { CustomFilmTicket } from "./CustomFilmTicket"
-import { JoinUs } from "@/shared/components/JoinUs"
+// import { JoinUs } from "@/shared/components/JoinUs"
 import { BecomeSponsor } from "@/shared/components/BecomeSponsor"
 
 const FeaturedFilms = React.lazy(() => import("./FeaturedFilms"))
@@ -67,7 +67,7 @@ export const Home = () => {
     const valuesRef = useRef(null)
     const peopleRef = useRef(null)
     const sponsorsRef = useRef(null)
-    const membershipRef = useRef(null)
+    // const membershipRef = useRef(null)
 
     // Check if sections are in view
     const whoAreWeInView = useInView(whoAreWeRef, { once: true, amount: 0.3 })
@@ -77,7 +77,7 @@ export const Home = () => {
     const valuesInView = useInView(valuesRef, { once: true, amount: 0.3 })
     const peopleInView = useInView(peopleRef, { once: true, amount: 0.3 })
     const sponsorsInView = useInView(sponsorsRef, { once: true, amount: 0.3 })
-    const membershipInView = useInView(membershipRef, { once: true, amount: 0.3 })
+    // const membershipInView = useInView(membershipRef, { once: true, amount: 0.3 })
 
     return (
         <div className="w-full h-full bg-[url('/texture.svg')] bg-contain bg-no-repeat">
@@ -195,7 +195,7 @@ export const Home = () => {
             </motion.section>
 
             {/* Black Circle Section */}
-            <div className="flex w-full z-0 items-center justify-center -mb-[250px] md:-mb-[450px]" ref={targetRef}>
+            <div className="md:flex hidden w-full z-0 items-center justify-center -mb-[250px] md:-mb-[450px]" ref={targetRef}>
                 <motion.div className="w-full max-w-[1000px] relative px-4 md:px-0" style={{ opacity, scale }}>
                     <motion.img
                         src="/wheel.png"
@@ -451,7 +451,7 @@ export const Home = () => {
                     {sponsors.map((sponsor, index) => (
                         <motion.div
                             key={sponsor.id}
-                            className="flex w-full gap-y-6 md:gap-y-10 items-center justify-center flex-col"
+                            className="flex w-full gap-y-6 md:gap-y-10 items-center justify-start flex-col"
                             initial={{ opacity: 0, y: 30 }}
                             animate={sponsorsInView ? { opacity: 1, y: 0 } : {}}
                             transition={{ duration: 0.5, delay: 0.4 + index * 0.2 }}
@@ -474,9 +474,9 @@ export const Home = () => {
                 <FeaturedFilms label="Featured Films" />
             </Suspense>
             <BecomeSponsor />
-            <JoinUs />
+            {/* <JoinUs /> */}
             {/* Dhurma Membership Section */}
-            <motion.section
+            {/* <motion.section
                 className="section_primary flex-col px-4 md:px-0"
                 ref={membershipRef}
                 initial={{ opacity: 0, y: 50 }}
@@ -530,7 +530,7 @@ export const Home = () => {
                         transition={{ type: "spring", stiffness: 400, damping: 10 }}
                     />
                 </motion.div>
-            </motion.section>
+            </motion.section> */}
         </div>
     )
 }
