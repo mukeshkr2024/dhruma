@@ -5,10 +5,10 @@ import { HeaderBanner } from "../components/HeaderBanner"
 
 export const RootLayout = ({ children }: PropsWithChildren) => {
     return (
-        <div className="flex flex-col min-h-screen bg-[#F9FFF1]">
+        <div className="flex flex-col min-h-screen overflow-hidden bg-[#F9FFF1]">
             <HeaderBanner />
             <NavBar />
-            <main>
+            <main className="">
                 {children}
             </main>
             <Footer />
