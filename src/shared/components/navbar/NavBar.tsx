@@ -158,13 +158,15 @@ export const NavBar = () => {
                     </div>
 
                     <motion.div className="flex items-center gap-x-4 md:gap-x-8" variants={linkVariants}>
-                        <motion.img
-                            src="./become_sponser_btn.svg"
-                            alt="Become a sponsor"
-                            className="h-8 md:h-auto cursor-pointer"
-                            whileHover={{ scale: 1.05 }}
-                            transition={{ type: "spring", stiffness: 400, damping: 10 }}
-                        />
+                        <Link to="/">
+                            <motion.img
+                                src="./become_sponser_btn.svg"
+                                alt="Become a sponsor"
+                                className="h-8 md:h-auto cursor-pointer"
+                                whileHover={{ scale: 1.05 }}
+                                transition={{ type: "spring", stiffness: 400, damping: 10 }}
+                            />
+                        </Link>
                         <motion.img
                             src="./book_now_btn.svg"
                             alt="Book now"

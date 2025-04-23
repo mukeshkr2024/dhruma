@@ -58,7 +58,7 @@ export const HeaderBanner = () => {
                                 className="font-secondary font-medium hover:underline"
                                 whileTap={{ scale: 0.95 }}
                             >
-                                <Link to="/film-lineup">
+                                <Link to="/submit-film">
                                     Film Submissions Open till 15th May ⚡️ Click here to submit
                                 </Link>
                             </motion.div>

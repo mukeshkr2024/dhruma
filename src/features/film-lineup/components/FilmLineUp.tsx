@@ -9,25 +9,11 @@ import { BlogList } from "@/shared/components/blogs/BlogList"
 import { Search } from "lucide-react"
 
 const filmCategories = [
-    "Documentary",
-    "Debut Director",
-    "Horror",
-    "Adventure",
-    "Feature Fiction",
-    "Short Film",
-    "Animation",
-    "Experimental",
-    "Student Film",
-    "Science Fiction",
-    "Fantasy",
-    "Thriller",
-    "Drama",
-    "Comedy",
-    "Musical",
-    "Biopic",
-    "Historical",
-    "Mystery",
-    "Action",
+    "Feature Films",
+    "Short Films",
+    "Documentaries",
+    "AI Films",
+    "Animated & Experimental Films",
 ]
 
 const containerVariants = {

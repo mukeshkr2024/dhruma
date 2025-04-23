@@ -99,11 +99,11 @@ export const CustomFilmTicket = () => {
                             >
                                 <span className="uppercase text-xs xs:text-sm sm:text-lg md:text-xl font-secondary text-[#224095] font-semibold">
                                     <span>
-                                        15<span className="align-super text-[0.6em]">th</span>
+                                        3<span className="align-super text-[0.6em]">th</span>
                                     </span>{" "}
                                     -
                                     <span>
-                                        18<span className="align-super text-[0.6em]">th</span>
+                                        5<span className="align-super text-[0.6em]">th</span>
                                     </span>{" "}
                                     June
                                 </span>
@@ -111,14 +111,14 @@ export const CustomFilmTicket = () => {
                         </div>
                     </div>
 
-                    <OptimizedCounter />
+                    <Counter />
                 </div>
             </div>
         </motion.section>
     )
 }
 
-function OptimizedCounter() {
+function Counter() {
     const [timeLeft, setTimeLeft] = useState({
         days: 0,
         hours: 0,
@@ -127,8 +127,8 @@ function OptimizedCounter() {
     })
 
     useEffect(() => {
-        const targetDate = new Date()
-        targetDate.setDate(targetDate.getDate() + 30)
+        // Set target date to June 3, 2025 (months are 0-indexed in JS)
+        const targetDate = new Date(2025, 5, 3); // June is month 5
 
         const calculateTimeLeft = () => {
             const now = new Date()

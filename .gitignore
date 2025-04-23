@@ -23,4 +23,7 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+backend/pb_data/
+backend/pb_migrations/
+backend/pb_public
 

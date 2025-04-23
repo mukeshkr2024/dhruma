@@ -26,10 +26,6 @@ export const Footer = () => {
 
     return (
         <footer className="w-full">
-            <div
-                className="w-full bg-[url(/footer_img.png)] bg-cover bg-no-repeat bg-center h-[200px] md:h-[300px] flex flex-col items-center justify-center"
-            />
-
             <div className="bg-[#304FA8] w-full min-h-[350px] md:min-h-[450px] relative px-4 md:px-8 py-8 md:py-12 overflow-hidden">
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-white max-w-4xl mx-auto relative z-10">
                     {navLinksColumns.map((column, colIndex) => (

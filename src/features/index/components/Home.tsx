@@ -2,8 +2,10 @@
 import React, { Suspense, useRef } from "react"
 import { motion, useInView, useScroll, useTransform } from "framer-motion"
 import { CustomFilmTicket } from "./CustomFilmTicket"
-// import { JoinUs } from "@/shared/components/JoinUs"
 import { BecomeSponsor } from "@/shared/components/BecomeSponsor"
+import { Link } from "@tanstack/react-router"
+import { cn } from "@/lib/cn"
+import { OurPartners } from "./OurPartners"
 
 const FeaturedFilms = React.lazy(() => import("./FeaturedFilms"))
 
@@ -26,18 +28,73 @@ const socialIcons = [
     },
 ]
 
-const sponsors = [
+const teams = [
     {
-        id: 1,
-        imgSrc: "/grandfather.png",
-        label: "Partners",
+        imgSrc: "Shrey Rajdeo.jpg",
+        name: "Shrey Rajdeo",
+        role: "Founder & Director",
     },
     {
-        id: 2,
-        imgSrc: "/cloudprism.png",
-        label: "Technology\nPartners",
+
+        imgSrc: "Adarsha Deshbhratar.jpg",
+        name: "Adarsha Deshbhratar",
+        role: "Co-Director",
+    },
+    {
+        imgSrc: "Joseph Barnett.jpg",
+        name: "Joseph Barnett",
+        role: "International Development Director",
+    },
+    {
+        imgSrc: "Tariq Faizi.jpg",
+        name: "Tariq Faizi",
+        role: "International Cultural Partner",
+    },
+    {
+        imgSrc: "Shahrukh Aksari.jpg",
+        name: "Shahrukh Aksari",
+        role: "PR Director",
+    },
+    {
+        imgSrc: "Sam Adtani.jpg",
+        name: "Sam Adtani",
+        role: "Growth Director",
+    },
+    {
+        imgSrc: "Mrittika Mukherjee.jpg",
+        name: "Mrittika Mukherjee",
+        role: "Festival Co-Producer",
     },
 ]
+
+const juries = [
+    {
+        name: "Amitabha Singh",
+        designation: "Director & Screenwriter",
+        imgSrc: "Amitabha_Singh.jpg"
+    },
+    {
+        name: "Sudharak Olwe",
+        designation: "Padma Shri Photo Journalist",
+        imgSrc: "Sudharak_Olwe.jpg"
+    },
+    {
+        name: "Mohammed Muslim",
+        designation: "Award Winning Filmmaker & Photographer (Qatar)",
+        imgSrc: "Mohammed_Muslim.jpg"
+    },
+    {
+        name: "Himanshu Malik",
+        designation: "Actor & Screenwriter",
+        imgSrc: "Himanshu_Malik.jpg"
+    },
+    {
+        name: "Anirban Datta",
+        designation: "Director & Screenwriter",
+        imgSrc: "Anirban_Datta.jpg"
+    }
+];
+
 
 const LoadingFallback = () => (
     <div className="flex justify-center items-center py-20">
@@ -66,7 +123,6 @@ export const Home = () => {
     const visionRef = useRef(null)
     const valuesRef = useRef(null)
     const peopleRef = useRef(null)
-    const sponsorsRef = useRef(null)
     // const membershipRef = useRef(null)
 
     // Check if sections are in view
@@ -76,7 +132,6 @@ export const Home = () => {
     const visionInView = useInView(visionRef, { once: true, amount: 0.3 })
     const valuesInView = useInView(valuesRef, { once: true, amount: 0.3 })
     const peopleInView = useInView(peopleRef, { once: true, amount: 0.3 })
-    const sponsorsInView = useInView(sponsorsRef, { once: true, amount: 0.3 })
     // const membershipInView = useInView(membershipRef, { once: true, amount: 0.3 })
 
     return (
@@ -171,16 +226,18 @@ export const Home = () => {
                         come alive and are celebrated. Blend with them and give me a better more powerful intro with a vision and
                         mission.
                     </motion.p>
-                    <motion.img
-                        src="/submit_black_btn.svg"
-                        alt="Submit"
-                        className="w-64 cursor-pointer"
-                        whileHover={{ scale: 1.05 }}
-                        whileTap={{ scale: 0.95 }}
-                        transition={{ type: "spring", stiffness: 400, damping: 10, duration: 0.6, delay: 0.6 }}
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={submitFilmInView ? { opacity: 1, y: 0 } : {}}
-                    />
+                    <Link to="/submit-film">
+                        <motion.img
+                            src="/submit_black_btn.svg"
+                            alt="Submit"
+                            className="w-64 cursor-pointer"
+                            whileHover={{ scale: 1.05 }}
+                            whileTap={{ scale: 0.95 }}
+                            transition={{ type: "spring", stiffness: 400, damping: 10, duration: 0.6, delay: 0.6 }}
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={submitFilmInView ? { opacity: 1, y: 0 } : {}}
+                        />
+                    </Link>
                 </div>
                 <div className="flex-1 flex justify-center md:justify-end items-center mb-8 md:mb-0">
                     <motion.img
@@ -195,7 +252,7 @@ export const Home = () => {
             </motion.section>
 
             {/* Black Circle Section */}
-            <div className="md:flex hidden w-full z-0 items-center justify-center -mb-[250px] md:-mb-[450px]" ref={targetRef}>
+            <div className="md:flex hidden w-full z-0 items-center justify-center -mb-[250px] md:-mb-[480px]" ref={targetRef}>
                 <motion.div className="w-full max-w-[1000px] relative px-4 md:px-0" style={{ opacity, scale }}>
                     <motion.img
                         src="/wheel.png"
@@ -206,15 +263,15 @@ export const Home = () => {
                     />
                     <div className="absolute w-full top-1/4 md:top-44">
                         <div className="w-full gap-y-4 md:gap-y-8 flex items-center justify-center flex-col">
-                            <motion.img
+                            {/* <motion.img
                                 src="/white_logo.svg"
                                 alt="Dhruma Logo"
                                 initial={{ opacity: 0, y: -20 }}
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ duration: 0.6, delay: 0.3 }}
-                            />
+                            /> */}
                             <motion.p
-                                className="paragraph_primary max-w-xl text-white text-center px-4 text-sm md:text-base"
+                                className="paragraph_primary max-w-xl text-white text-center px-4 text-sm md:text-base mt-14"
                                 initial={{ opacity: 0 }}
                                 animate={{ opacity: 1 }}
                                 transition={{ duration: 0.6, delay: 0.6 }}
@@ -380,6 +437,80 @@ export const Home = () => {
                 </div>
             </motion.section>
 
+            <section className="section_secondary w-full">
+                <div className="flex flex-col w-full lg:flex-row md:justify-between items-center gap-8 lg:gap-40">
+                    <motion.h3
+                        className="primary-heading text-center lg:text-left mb-8 lg:mb-0 lg:max-w-10"
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{
+                            opacity: 1,
+                            y: 0,
+                            transition: {
+                                type: "spring",
+                                stiffness: 300,
+                                damping: 20,
+                                duration: 0.6,
+                            },
+                        }}
+                        viewport={{ once: true, amount: 0.3 }}
+                    >
+                        Meet Our Jury
+                    </motion.h3>
+
+                    <div className="flex flex-col gap-y-8 w-full max-w-2xl">
+                        {juries.map((jury, idx) => (
+                            <motion.div
+                                className={cn(
+                                    "flex flex-col sm:flex-row items-center sm:items-end gap-4 sm:gap-8",
+                                    idx % 2 === 1 && "sm:ml-0 md:ml-16 lg:ml-64",
+                                )}
+                                key={jury.name}
+                                initial={{ opacity: 0, y: 30 }}
+                                whileInView={{
+                                    opacity: 1,
+                                    y: 0,
+                                    transition: {
+                                        type: "spring",
+                                        stiffness: 300,
+                                        damping: 20,
+                                        duration: 0.6,
+                                        delay: idx * 0.1,
+                                    },
+                                }}
+                                viewport={{ once: true, amount: 0.3 }}
+                                whileHover={{
+                                    y: -5,
+                                    transition: {
+                                        type: "spring",
+                                        stiffness: 300,
+                                        damping: 10,
+                                    },
+                                }}
+                            >
+                                <motion.div
+                                    className="w-24 h-24 sm:w-32 sm:h-32 md:w-40 md:h-40 lg:w-48 lg:h-48 relative overflow-hidden shrink-0"
+                                    whileHover={{
+                                        scale: 1.05,
+                                        transition: {
+                                            type: "spring",
+                                            stiffness: 300,
+                                            damping: 10,
+                                        },
+                                    }}
+                                >
+                                    <img src={`/juries/${jury.imgSrc}`} alt={jury.name} className="w-full h-full object-cover" />
+                                </motion.div>
+
+                                <div className="text-center sm:text-left mb-0 sm:mb-8">
+                                    <h4 className="font-primary text-base md:text-lg font-normal uppercase">{jury.name}</h4>
+                                    <p className="font-secondary text-xs md:text-sm">{jury.designation}</p>
+                                </div>
+                            </motion.div>
+                        ))}
+                    </div>
+                </div>
+            </section>
+
             {/* People With Us Section */}
             <motion.section
                 className="w-full py-16 md:py-32 flex flex-col gap-y-8 md:gap-y-12 px-4 md:px-12"
@@ -398,78 +529,39 @@ export const Home = () => {
                 </motion.h3>
 
                 <motion.div
-                    className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4 md:gap-8"
+                    className="flex flex-wrap max-w-6xl mx-auto items-center justify-center gap-4 md:gap-8"
                     initial={{ opacity: 0 }}
                     animate={peopleInView ? { opacity: 1 } : {}}
                     transition={{ duration: 0.6, delay: 0.4 }}
                 >
-                    {Array.from({ length: 12 }, (_, i) => (
+                    {teams.map((team, idx) => (
                         <motion.div
-                            key={i}
+                            key={team.name}
                             className="flex items-center justify-center flex-col gap-y-1"
                             initial={{ opacity: 0, y: 20 }}
                             animate={peopleInView ? { opacity: 1, y: 0 } : {}}
-                            transition={{ duration: 0.4, delay: 0.4 + i * 0.05 }}
+                            transition={{ duration: 0.4, delay: 0.4 + idx * 0.05 }}
                             whileHover={{ y: -5 }}
                         >
                             <motion.div
-                                className="mb-2"
+                                className="mb-2 w-32 h-32 sm:w-40 sm:h-40 lg:w-48 lg:h-48 relative rounded-full overflow-hidden"
                                 whileHover={{ scale: 1.05 }}
                                 transition={{ type: "spring", stiffness: 300, damping: 10 }}
                             >
-                                <img src="/director.png" alt="Director" />
+                                <img
+                                    src={`/teams/${team.imgSrc}`}
+                                    alt="Director"
+                                    className="w-full h-full object-cover absolute inset-0"
+                                    loading="lazy"
+                                />
                             </motion.div>
-                            <span>Lorem ipsum dolor </span>
-                            <span className="uppercase text-[#47B157]">director</span>
+                            <span>{team.name}</span>
+                            <span className="uppercase text-[#47B157] max-w-56 text-center">{team.role}</span>
                         </motion.div>
                     ))}
                 </motion.div>
             </motion.section>
-
-            {/* Our Sponsors */}
-            <motion.section
-                className="flex max-w-4xl mx-auto flex-col gap-y-8 md:gap-y-16 py-12 md:py-20 px-4 md:px-0"
-                ref={sponsorsRef}
-                initial={{ opacity: 0, y: 50 }}
-                animate={sponsorsInView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.6 }}
-            >
-                <motion.h2
-                    className="primary-heading text-center md:text-left"
-                    initial={{ opacity: 0, x: -30 }}
-                    animate={sponsorsInView ? { opacity: 1, x: 0 } : {}}
-                    transition={{ duration: 0.6, delay: 0.2 }}
-                >
-                    Our <br /> Sponsors
-                </motion.h2>
-                <motion.div
-                    className="w-full grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-14"
-                    initial={{ opacity: 0 }}
-                    animate={sponsorsInView ? { opacity: 1 } : {}}
-                    transition={{ duration: 0.6, delay: 0.4 }}
-                >
-                    {sponsors.map((sponsor, index) => (
-                        <motion.div
-                            key={sponsor.id}
-                            className="flex w-full gap-y-6 md:gap-y-10 items-center justify-start flex-col"
-                            initial={{ opacity: 0, y: 30 }}
-                            animate={sponsorsInView ? { opacity: 1, y: 0 } : {}}
-                            transition={{ duration: 0.5, delay: 0.4 + index * 0.2 }}
-                        >
-                            <motion.div
-                                className="bg-[#FFFFFF] border-t-[5px] border-[#FF8B17] aspect-video rounded-2xl flex items-center justify-center w-full"
-                                whileHover={{ y: -5, boxShadow: "0 10px 25px -5px rgba(0, 0, 0, 0.1)" }}
-                                transition={{ type: "spring", stiffness: 300, damping: 10 }}
-                            >
-                                <img src={sponsor.imgSrc || "/placeholder.svg"} alt={sponsor.label} />
-                            </motion.div>
-                            <span className="text-[#DF941C] text-xl md:text-2xl font-primary uppercase whitespace-pre-line text-center">
-                                {sponsor.label}
-                            </span>
-                        </motion.div>
-                    ))}
-                </motion.div>
-            </motion.section>
+            <OurPartners />
             <Suspense fallback={<LoadingFallback />}>
                 <FeaturedFilms label="Featured Films" />
             </Suspense>
@@ -531,6 +623,10 @@ export const Home = () => {
                     />
                 </motion.div>
             </motion.section> */}
+
+            <div
+                className="w-full bg-[url(/hill.png)] bg-cover bg-no-repeat bg-center h-[200px] md:h-[300px] flex flex-col items-center justify-center"
+            />
         </div>
     )
 }

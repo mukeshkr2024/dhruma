@@ -11,10 +11,17 @@
 // Import Routes
 
 import { Route as rootRoute } from './routes/__root'
+import { Route as SubmitFilmImport } from './routes/submit-film'
 import { Route as FilmLineupImport } from './routes/film-lineup'
 import { Route as IndexImport } from './routes/index'
 
 // Create/Update Routes
+
+const SubmitFilmRoute = SubmitFilmImport.update({
+  id: '/submit-film',
+  path: '/submit-film',
+  getParentRoute: () => rootRoute,
+} as any)
 
 const FilmLineupRoute = FilmLineupImport.update({
   id: '/film-lineup',
@@ -46,6 +53,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof FilmLineupImport
       parentRoute: typeof rootRoute
     }
+    '/submit-film': {
+      id: '/submit-film'
+      path: '/submit-film'
+      fullPath: '/submit-film'
+      preLoaderRoute: typeof SubmitFilmImport
+      parentRoute: typeof rootRoute
+    }
   }
 }
 
@@ -54,36 +68,41 @@ declare module '@tanstack/react-router' {
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/film-lineup': typeof FilmLineupRoute
+  '/submit-film': typeof SubmitFilmRoute
 }
 
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/film-lineup': typeof FilmLineupRoute
+  '/submit-film': typeof SubmitFilmRoute
 }
 
 export interface FileRoutesById {
   __root__: typeof rootRoute
   '/': typeof IndexRoute
   '/film-lineup': typeof FilmLineupRoute
+  '/submit-film': typeof SubmitFilmRoute
 }
 
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/film-lineup'
+  fullPaths: '/' | '/film-lineup' | '/submit-film'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/film-lineup'
-  id: '__root__' | '/' | '/film-lineup'
+  to: '/' | '/film-lineup' | '/submit-film'
+  id: '__root__' | '/' | '/film-lineup' | '/submit-film'
   fileRoutesById: FileRoutesById
 }
 
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   FilmLineupRoute: typeof FilmLineupRoute
+  SubmitFilmRoute: typeof SubmitFilmRoute
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   FilmLineupRoute: FilmLineupRoute,
+  SubmitFilmRoute: SubmitFilmRoute,
 }
 
 export const routeTree = rootRoute
@@ -97,7 +116,8 @@ export const routeTree = rootRoute
       "filePath": "__root.tsx",
       "children": [
         "/",
-        "/film-lineup"
+        "/film-lineup",
+        "/submit-film"
       ]
     },
     "/": {
@@ -105,6 +125,9 @@ export const routeTree = rootRoute
     },
     "/film-lineup": {
       "filePath": "film-lineup.tsx"
+    },
+    "/submit-film": {
+      "filePath": "submit-film.tsx"
     }
   }
 }
