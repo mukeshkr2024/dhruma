@@ -38,7 +38,7 @@ const partners = [
 ];
 
 
-export const OurPartners = () => {
+const OurPartners = () => {
     const partnersRef = useRef(null)
     const partnersInView = useInView(partnersRef, { once: true, amount: 0.3 })
 
@@ -107,3 +107,5 @@ export const OurPartners = () => {
         </motion.section>
     )
 }
+
+export default OurPartners

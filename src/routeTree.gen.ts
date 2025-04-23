@@ -13,7 +13,9 @@
 import { Route as rootRoute } from './routes/__root'
 import { Route as SubmitFilmImport } from './routes/submit-film'
 import { Route as FilmLineupImport } from './routes/film-lineup'
+import { Route as BecomeASponserImport } from './routes/become-a-sponser'
 import { Route as IndexImport } from './routes/index'
+import { Route as NewsTitleImport } from './routes/news/$title'
 
 // Create/Update Routes
 
@@ -29,9 +31,21 @@ const FilmLineupRoute = FilmLineupImport.update({
   getParentRoute: () => rootRoute,
 } as any)
 
+const BecomeASponserRoute = BecomeASponserImport.update({
+  id: '/become-a-sponser',
+  path: '/become-a-sponser',
+  getParentRoute: () => rootRoute,
+} as any)
+
 const IndexRoute = IndexImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const NewsTitleRoute = NewsTitleImport.update({
+  id: '/news/$title',
+  path: '/news/$title',
   getParentRoute: () => rootRoute,
 } as any)
 
@@ -44,6 +58,13 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexImport
+      parentRoute: typeof rootRoute
+    }
+    '/become-a-sponser': {
+      id: '/become-a-sponser'
+      path: '/become-a-sponser'
+      fullPath: '/become-a-sponser'
+      preLoaderRoute: typeof BecomeASponserImport
       parentRoute: typeof rootRoute
     }
     '/film-lineup': {
@@ -60,6 +81,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof SubmitFilmImport
       parentRoute: typeof rootRoute
     }
+    '/news/$title': {
+      id: '/news/$title'
+      path: '/news/$title'
+      fullPath: '/news/$title'
+      preLoaderRoute: typeof NewsTitleImport
+      parentRoute: typeof rootRoute
+    }
   }
 }
 
@@ -67,42 +95,68 @@ declare module '@tanstack/react-router' {
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/become-a-sponser': typeof BecomeASponserRoute
   '/film-lineup': typeof FilmLineupRoute
   '/submit-film': typeof SubmitFilmRoute
+  '/news/$title': typeof NewsTitleRoute
 }
 
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/become-a-sponser': typeof BecomeASponserRoute
   '/film-lineup': typeof FilmLineupRoute
   '/submit-film': typeof SubmitFilmRoute
+  '/news/$title': typeof NewsTitleRoute
 }
 
 export interface FileRoutesById {
   __root__: typeof rootRoute
   '/': typeof IndexRoute
+  '/become-a-sponser': typeof BecomeASponserRoute
   '/film-lineup': typeof FilmLineupRoute
   '/submit-film': typeof SubmitFilmRoute
+  '/news/$title': typeof NewsTitleRoute
 }
 
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/film-lineup' | '/submit-film'
+  fullPaths:
+    | '/'
+    | '/become-a-sponser'
+    | '/film-lineup'
+    | '/submit-film'
+    | '/news/$title'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/film-lineup' | '/submit-film'
-  id: '__root__' | '/' | '/film-lineup' | '/submit-film'
+  to:
+    | '/'
+    | '/become-a-sponser'
+    | '/film-lineup'
+    | '/submit-film'
+    | '/news/$title'
+  id:
+    | '__root__'
+    | '/'
+    | '/become-a-sponser'
+    | '/film-lineup'
+    | '/submit-film'
+    | '/news/$title'
   fileRoutesById: FileRoutesById
 }
 
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  BecomeASponserRoute: typeof BecomeASponserRoute
   FilmLineupRoute: typeof FilmLineupRoute
   SubmitFilmRoute: typeof SubmitFilmRoute
+  NewsTitleRoute: typeof NewsTitleRoute
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  BecomeASponserRoute: BecomeASponserRoute,
   FilmLineupRoute: FilmLineupRoute,
   SubmitFilmRoute: SubmitFilmRoute,
+  NewsTitleRoute: NewsTitleRoute,
 }
 
 export const routeTree = rootRoute
@@ -116,18 +170,26 @@ export const routeTree = rootRoute
       "filePath": "__root.tsx",
       "children": [
         "/",
+        "/become-a-sponser",
         "/film-lineup",
-        "/submit-film"
+        "/submit-film",
+        "/news/$title"
       ]
     },
     "/": {
       "filePath": "index.tsx"
+    },
+    "/become-a-sponser": {
+      "filePath": "become-a-sponser.tsx"
     },
     "/film-lineup": {
       "filePath": "film-lineup.tsx"
     },
     "/submit-film": {
       "filePath": "submit-film.tsx"
+    },
+    "/news/$title": {
+      "filePath": "news/$title.tsx"
     }
   }
 }

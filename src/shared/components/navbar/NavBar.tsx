@@ -158,7 +158,7 @@ export const NavBar = () => {
                     </div>
 
                     <motion.div className="flex items-center gap-x-4 md:gap-x-8" variants={linkVariants}>
-                        <Link to="/">
+                        <Link to="/become-a-sponser">
                             <motion.img
                                 src="./become_sponser_btn.svg"
                                 alt="Become a sponsor"

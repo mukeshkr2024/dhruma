@@ -5,9 +5,9 @@ import { CustomFilmTicket } from "./CustomFilmTicket"
 import { BecomeSponsor } from "@/shared/components/BecomeSponsor"
 import { Link } from "@tanstack/react-router"
 import { cn } from "@/lib/cn"
-import { OurPartners } from "./OurPartners"
 
 const FeaturedFilms = React.lazy(() => import("./FeaturedFilms"))
+const OurPartners = React.lazy(() => import("./OurPartners"))
 
 const socialIcons = [
     {
