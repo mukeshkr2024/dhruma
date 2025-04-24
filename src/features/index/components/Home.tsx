@@ -5,6 +5,7 @@ import { CustomFilmTicket } from "./CustomFilmTicket"
 import { BecomeSponsor } from "@/shared/components/BecomeSponsor"
 import { Link } from "@tanstack/react-router"
 import { cn } from "@/lib/cn"
+import { NewsAndUpdates } from "./NewsAndUpdates"
 
 const FeaturedFilms = React.lazy(() => import("./FeaturedFilms"))
 const OurPartners = React.lazy(() => import("./OurPartners"))
@@ -525,8 +526,8 @@ export const Home = () => {
                     animate={peopleInView ? { opacity: 1, y: 0 } : {}}
                     transition={{ duration: 0.6, delay: 0.2 }}
                 >
-                    People <br /> with us
-                </motion.h3>
+                    The <br />
+                    Team                </motion.h3>
 
                 <motion.div
                     className="flex flex-wrap max-w-6xl mx-auto items-center justify-center gap-4 md:gap-8"
@@ -561,11 +562,14 @@ export const Home = () => {
                     ))}
                 </motion.div>
             </motion.section>
-            <OurPartners />
             <Suspense fallback={<LoadingFallback />}>
                 <FeaturedFilms label="Featured Films" />
             </Suspense>
+            <OurPartners />
             <BecomeSponsor />
+            <Suspense>
+                <NewsAndUpdates />
+            </Suspense>
             {/* <JoinUs /> */}
             {/* Dhurma Membership Section */}
             {/* <motion.section

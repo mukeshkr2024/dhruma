@@ -11,31 +11,19 @@ const films: {
         },
         {
             name: "Film 2",
-            imageSrc: "/films/film1.png",
+            imageSrc: "/films/film2.png",
         },
         {
             name: "Film 3",
-            imageSrc: "/films/film1.png",
+            imageSrc: "/films/film3.png",
         },
         {
             name: "Film 4",
-            imageSrc: "/films/film1.png",
+            imageSrc: "/films/film4.png",
         },
         {
             name: "Film 5",
-            imageSrc: "/films/film1.png",
-        },
-        {
-            name: "Film 6",
-            imageSrc: "/films/film1.png",
-        },
-        {
-            name: "Film 7",
-            imageSrc: "/films/film1.png",
-        },
-        {
-            name: "Film 8",
-            imageSrc: "/films/film1.png",
+            imageSrc: "/films/film5.png",
         },
     ]
 
