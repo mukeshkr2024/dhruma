@@ -1,0 +1,34 @@
+# Node modules (will be reinstalled inside the container)
+node_modules
+npm-debug.log
+yarn-debug.log
+yarn-error.log
+
+# Logs
+*.log
+logs
+*.pid
+
+# Environment files
+.env
+.env.*  # in case you have .env.local, .env.production, etc.
+
+# OS & Editor junk
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*.swn
+.vscode
+.idea
+
+# Build output
+build
+dist
+.cache
+.tmp
+
+# Docker artifacts
+Dockerfile
+docker-compose.yml
+.dockerignore
