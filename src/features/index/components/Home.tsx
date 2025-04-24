@@ -337,7 +337,7 @@ export const Home = () => {
 
             {/* Our Vision Section */}
             <motion.section
-                className="flex flex-col md:flex-row w-full max-h-[480px] md:max-h-[380px] mt-[300px] md:mt-[376px]"
+                className="flex flex-col md:flex-row w-full max-h-[480px] md:max-h-[380px] mt-[500px] sm:mt-[400px] md:mt-[350px]"
                 ref={visionRef}
                 initial={{ opacity: 0 }}
                 animate={visionInView ? { opacity: 1 } : {}}
