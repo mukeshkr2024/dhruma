@@ -114,7 +114,9 @@ export const NavBar = () => {
             <nav className="flex justify-between items-center min-h-16 px-4 md:px-10 py-2">
                 <motion.div variants={logoVariants}>
                     <div>
-                        <img src="/logo.svg" alt="Dhruma Film Festival" className="h-12 md:h-auto" />
+                        <Link to="/">
+                            <img src="/logo.svg" alt="Dhruma Film Festival" className="h-12 md:h-auto" />
+                        </Link>
                     </div>
                 </motion.div>
 

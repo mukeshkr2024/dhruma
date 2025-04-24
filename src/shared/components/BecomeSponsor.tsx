@@ -1,3 +1,4 @@
+import { Link } from '@tanstack/react-router'
 import { motion } from 'framer-motion'
 
 export const BecomeSponsor = () => {
@@ -44,17 +45,20 @@ export const BecomeSponsor = () => {
                     </motion.p>
                 </div>
 
-                <motion.img
-                    src="/join_btn.svg"
-                    alt="Join"
-                    className="w-48 md:w-64 cursor-pointer"
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    transition={{ type: "spring", stiffness: 400, damping: 10, duration: 0.6, delay: 0.8 }}
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                />
+                <Link to='/become-a-sponser'>
+                    <motion.img
+                        src="/join_btn.svg"
+                        alt="Join"
+                        className="w-48 md:w-64 cursor-pointer"
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.95 }}
+                        transition={{ type: "spring", stiffness: 400, damping: 10, duration: 0.6, delay: 0.8 }}
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                    />
+                </Link>
+
             </div>
         </motion.section>
     )
