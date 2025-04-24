@@ -408,6 +408,41 @@ export interface ApiMovieMovie extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiSponserSponser extends Struct.CollectionTypeSchema {
+  collectionName: 'sponsers';
+  info: {
+    description: '';
+    displayName: 'Sponser';
+    pluralName: 'sponsers';
+    singularName: 'sponser';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    brandDescription: Schema.Attribute.Text;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    email: Schema.Attribute.String;
+    fullName: Schema.Attribute.String;
+    interestReason: Schema.Attribute.Text;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::sponser.sponser'
+    > &
+      Schema.Attribute.Private;
+    organization: Schema.Attribute.String;
+    phone: Schema.Attribute.String;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    website: Schema.Attribute.String;
+  };
+}
+
 export interface PluginContentReleasesRelease
   extends Struct.CollectionTypeSchema {
   collectionName: 'strapi_releases';
@@ -918,6 +953,7 @@ declare module '@strapi/strapi' {
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
       'api::movie.movie': ApiMovieMovie;
+      'api::sponser.sponser': ApiSponserSponser;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
       'plugin::i18n.locale': PluginI18NLocale;

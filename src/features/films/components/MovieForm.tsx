@@ -1,5 +1,6 @@
 "use client";
 
+import axios from "axios";
 import { useState, useCallback, type FormEvent } from "react";
 
 interface FormData {
@@ -16,7 +17,7 @@ interface FormData {
     cast: string;
     movieSummary: string;
     credits: string;
-    status: string;
+    movieStatus: string;
 }
 
 const genres = [
@@ -103,7 +104,7 @@ export const MovieForm = () => {
         cast: "",
         movieSummary: "",
         credits: "",
-        status: "",
+        movieStatus: "",
     };
 
     const [formData, setFormData] = useState<FormData>(initialFormState);
@@ -143,13 +144,18 @@ export const MovieForm = () => {
             setIsSubmitting(true);
 
             try {
-                const response = await fetch("http://localhost:8091/api/collections/sponsers/records", {
-                    method: "POST",
-                    headers: { "Content-Type": "application/json" },
-                    body: JSON.stringify(formData),
+
+                const response = await axios.post(`/api/movies`, {
+                    data: { ...formData }
                 });
 
-                if (!response.ok) throw new Error(`Server error: ${response.status}`);
+                if (response.status !== 200) {
+                    throw new Error("Failed to submit form");
+                }
+
+                // Handle success (e.g., show a success message, redirect, etc.)
+                console.log("Form submitted successfully:", response.data);
+                // Reset form and success state 
 
                 setSubmitSuccess(true);
                 setFormData(initialFormState);
@@ -159,7 +165,7 @@ export const MovieForm = () => {
                 setIsSubmitting(false);
             }
         },
-        [formData, validateForm, initialFormState]
+        [formData, initialFormState, validateForm]
     );
 
     return (
@@ -264,11 +270,11 @@ export const MovieForm = () => {
                     </div>
 
                     <FormField
-                        name="status"
+                        name="movieStatus"
                         label="Status"
-                        value={formData.status}
+                        value={formData.movieStatus}
                         onChange={handleChange}
-                        error={errors.status || ""}
+                        error={errors.movieStatus || ""}
                     />
 
                     <FormField

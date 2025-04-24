@@ -1,0 +1,36 @@
+{
+  "kind": "collectionType",
+  "collectionName": "sponsers",
+  "info": {
+    "singularName": "sponser",
+    "pluralName": "sponsers",
+    "displayName": "Sponser",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "attributes": {
+    "fullName": {
+      "type": "string"
+    },
+    "organization": {
+      "type": "string"
+    },
+    "email": {
+      "type": "string"
+    },
+    "phone": {
+      "type": "string"
+    },
+    "website": {
+      "type": "string"
+    },
+    "brandDescription": {
+      "type": "text"
+    },
+    "interestReason": {
+      "type": "text"
+    }
+  }
+}

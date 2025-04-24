@@ -1,5 +1,6 @@
 "use client";
 
+import axios from "axios";
 import { useState, useCallback, type FormEvent } from "react";
 
 interface FormData {
@@ -117,13 +118,14 @@ export const SponsorForm = () => {
             setIsSubmitting(true);
 
             try {
-                const response = await fetch("http://localhost:8091/api/collections/sponsers/records", {
-                    method: "POST",
-                    headers: { "Content-Type": "application/json" },
-                    body: JSON.stringify(formData),
-                });
+                const { data } = await axios.post(`/api/sponsers`, {
+                    data: formData
+                })
 
-                if (!response.ok) throw new Error(`Server error: ${response.status}`);
+                if (data.error) {
+                    setErrors((prev) => ({ ...prev, ...data.error }));
+                    return;
+                }
 
                 setSubmitSuccess(true);
                 setFormData(initialFormState);

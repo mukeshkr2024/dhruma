@@ -18,6 +18,9 @@ COPY --from=builder /app/dist /usr/share/nginx/html
 # Replace default nginx config
 COPY nginx.conf /etc/nginx/conf.d/default.conf
 
+# Environment variable for API URL
+ENV API_URL=${API_URL}
+
 EXPOSE 4005
 
 CMD ["nginx", "-g", "daemon off;"]
