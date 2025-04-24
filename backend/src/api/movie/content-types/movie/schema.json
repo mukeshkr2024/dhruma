@@ -1,0 +1,57 @@
+{
+  "kind": "collectionType",
+  "collectionName": "movies",
+  "info": {
+    "singularName": "movie",
+    "pluralName": "movies",
+    "displayName": "Movie",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "attributes": {
+    "firstName": {
+      "type": "string"
+    },
+    "secondName": {
+      "type": "string"
+    },
+    "email": {
+      "type": "email"
+    },
+    "phone": {
+      "type": "string"
+    },
+    "movieName": {
+      "type": "string"
+    },
+    "directorName": {
+      "type": "string"
+    },
+    "language": {
+      "type": "string"
+    },
+    "duration": {
+      "type": "string"
+    },
+    "movieLink": {
+      "type": "string"
+    },
+    "genre": {
+      "type": "string"
+    },
+    "cast": {
+      "type": "string"
+    },
+    "movieSummary": {
+      "type": "text"
+    },
+    "credits": {
+      "type": "string"
+    },
+    "movieStatus": {
+      "type": "string"
+    }
+  }
+}
