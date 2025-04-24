@@ -36,7 +36,7 @@ jobs:
 
             cd dhruma
 
-            docker compose up -d --build --no-cache
+            docker compose up -d --build
 
       - name: Clean up SSH private key
         run: rm -f private_key
