@@ -7,10 +7,10 @@ const partners = [
         images: ["/Rail_black.png", "Indian_Railway_Heritage_Logo-14_–_Darjeeling_Himalayan_Railway_(NFR).png"],
         label: "Official Partner",
     },
-    {
-        images: ["/admin.png"],
-        label: "Operations Partner",
-    },
+    // {
+    //     images: ["/admin.png"],
+    //     label: "Operations Partner",
+    // },
     {
         images: ["/TAHBIB.png"],
         label: "International Cultural Partner",
@@ -29,7 +29,7 @@ const partners = [
     },
     {
         images: ["/VISION.png"],
-        label: "Local Partner",
+        label: "Regional Strategic Partner",
     },
     {
         images: ["volunteer.png"],
