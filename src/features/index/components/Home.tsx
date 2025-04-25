@@ -66,12 +66,42 @@ const teams = [
         name: "Mrittika Mukherjee",
         role: "Festival Co-Producer",
     },
+    {
+        imgSrc: "Vikram Hangmang.png",
+        name: "Mr. Vikram Hangmang",
+        role: ""
+    }, {
+        imgSrc: "Siddharth Thami.png",
+        name: "Siddharth Thami",
+        role: ""
+    }
+]
+
+
+const programmers = [
+    {
+        name: "Saurabh Jaiswal ",
+        role: "Film Programmer",
+        imgSrc: "Saurabh Jaiswal.png"
+    }, {
+        name: "Kunal Singh",
+        role: "Film Programmer",
+        imgSrc: "Kunal Singh.png"
+    }, {
+        name: "Abhijita Sharma",
+        role: "Film Co-Programmer",
+        imgSrc: "Abhijita Sharma.png"
+    }, {
+        name: "Rajaditya Ghosh",
+        role: "Assistant Film Programmer",
+        imgSrc: "Rajaditya Ghosh.png"
+    }
 ]
 
 const juries = [
     {
         name: "Amitabha Singh",
-        designation: "Director & Screenwriter",
+        designation: "Cinematographer and Director",
         imgSrc: "Amitabha_Singh.jpg"
     },
     {
@@ -512,9 +542,61 @@ export const Home = () => {
                 </div>
             </section>
 
+            {/* Film Programmers  */}
+            <motion.section
+                className="w-full py-16 flex flex-col gap-y-8 md:gap-y-12 px-4 md:px-12"
+                ref={peopleRef}
+                initial={{ opacity: 0, y: 50 }}
+                animate={peopleInView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.6 }}
+            >
+                <motion.h3
+                    className="primary-heading text-center md:text-left md:ml-40"
+                    initial={{ opacity: 0, y: -20 }}
+                    animate={peopleInView ? { opacity: 1, y: 0 } : {}}
+                    transition={{ duration: 0.6, delay: 0.2 }}
+                >
+                    Film
+                    <br /> Programmers
+                </motion.h3>
+
+                <motion.div
+                    className="flex flex-wrap max-w-6xl mx-auto items-start justify-center gap-4 md:gap-8"
+                    initial={{ opacity: 0 }}
+                    animate={peopleInView ? { opacity: 1 } : {}}
+                    transition={{ duration: 0.6, delay: 0.4 }}
+                >
+                    {programmers.map((team, idx) => (
+                        <motion.div
+                            key={team.name}
+                            className="flex items-center justify-center flex-col gap-y-1"
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={peopleInView ? { opacity: 1, y: 0 } : {}}
+                            transition={{ duration: 0.4, delay: 0.4 + idx * 0.05 }}
+                            whileHover={{ y: -5 }}
+                        >
+                            <motion.div
+                                className="mb-2 w-32 h-32 sm:w-40 sm:h-40 lg:w-48 lg:h-48 relative  overflow-hidden"
+                                whileHover={{ scale: 1.05 }}
+                                transition={{ type: "spring", stiffness: 300, damping: 10 }}
+                            >
+                                <img
+                                    src={`/programmer/${team.imgSrc}`}
+                                    alt="Director"
+                                    className="w-full h-full object-cover absolute inset-0"
+                                    loading="lazy"
+                                />
+                            </motion.div>
+                            <span>{team.name}</span>
+                            <span className="uppercase text-[#224095] max-w-56 text-center">{team.role}</span>
+                        </motion.div>
+                    ))}
+                </motion.div>
+            </motion.section>
+
             {/* People With Us Section */}
             <motion.section
-                className="w-full py-16 md:py-32 flex flex-col gap-y-8 md:gap-y-12 px-4 md:px-12"
+                className="w-full py-16 md:py-20 flex flex-col gap-y-8 md:gap-y-12 px-4 md:px-12"
                 ref={peopleRef}
                 initial={{ opacity: 0, y: 50 }}
                 animate={peopleInView ? { opacity: 1, y: 0 } : {}}
