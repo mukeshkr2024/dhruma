@@ -530,7 +530,7 @@ export const Home = () => {
                     Team                </motion.h3>
 
                 <motion.div
-                    className="flex flex-wrap max-w-6xl mx-auto items-center justify-center gap-4 md:gap-8"
+                    className="flex flex-wrap max-w-6xl mx-auto items-start justify-center gap-4 md:gap-8"
                     initial={{ opacity: 0 }}
                     animate={peopleInView ? { opacity: 1 } : {}}
                     transition={{ duration: 0.6, delay: 0.4 }}
@@ -545,7 +545,7 @@ export const Home = () => {
                             whileHover={{ y: -5 }}
                         >
                             <motion.div
-                                className="mb-2 w-32 h-32 sm:w-40 sm:h-40 lg:w-48 lg:h-48 relative rounded-full overflow-hidden"
+                                className="mb-2 w-32 h-32 sm:w-40 sm:h-40 lg:w-48 lg:h-48 relative  overflow-hidden"
                                 whileHover={{ scale: 1.05 }}
                                 transition={{ type: "spring", stiffness: 300, damping: 10 }}
                             >
@@ -557,7 +557,7 @@ export const Home = () => {
                                 />
                             </motion.div>
                             <span>{team.name}</span>
-                            <span className="uppercase text-[#47B157] max-w-56 text-center">{team.role}</span>
+                            <span className="uppercase text-[#224095] max-w-56 text-center">{team.role}</span>
                         </motion.div>
                     ))}
                 </motion.div>

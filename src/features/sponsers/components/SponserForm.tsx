@@ -1,7 +1,7 @@
 "use client";
 
 import axios from "axios";
-import { useState, useCallback, type FormEvent } from "react";
+import { useState, useCallback, type FormEvent, useEffect } from "react";
 
 interface FormData {
     fullName: string;
@@ -137,6 +137,16 @@ export const SponsorForm = () => {
         },
         [formData, validateForm, initialFormState]
     );
+
+    useEffect(() => {
+        if (submitSuccess) {
+            const timer = setTimeout(() => {
+                setSubmitSuccess(false);
+            }, 5000);
+            return () => clearTimeout(timer);
+        }
+    }, [submitSuccess]);
+
 
     return (
         <div className="p-4 md:p-8 font-sans w-full my-16">
