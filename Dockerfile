@@ -12,15 +12,16 @@ RUN npm run build
 # Stage 2: Serve with a static server
 FROM nginx:alpine
 
+# Install gettext for envsubst
+RUN apk add --no-cache gettext
+
 # Copy built files from the builder stage
 COPY --from=builder /app/dist /usr/share/nginx/html
 
-# Replace default nginx config
-COPY nginx.conf /etc/nginx/conf.d/default.conf
-
-# Environment variable for API URL
-ENV API_URL=${API_URL}
+# Copy Nginx config template
+COPY nginx.conf /etc/nginx/conf.d/default.conf.template
 
 EXPOSE 4005
 
-CMD ["nginx", "-g", "daemon off;"]
+# Substitute environment variables and start Nginx
+CMD ["sh", "-c", "envsubst '${API_URL}' < /etc/nginx/conf.d/default.conf.template > /etc/nginx/conf.d/default.conf && nginx -g 'daemon off;'"]
