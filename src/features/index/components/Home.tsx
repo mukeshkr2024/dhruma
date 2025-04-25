@@ -69,11 +69,11 @@ const teams = [
     {
         imgSrc: "Vikram Hangmang.png",
         name: "Mr. Vikram Hangmang",
-        role: ""
+        role: "Regional Strategic Partner"
     }, {
         imgSrc: "Siddharth Thami.png",
         name: "Siddharth Thami",
-        role: ""
+        role: "Regional Strategic Partner"
     }
 ]
 
