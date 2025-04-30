@@ -149,9 +149,7 @@ export const MovieForm = () => {
                     data: { ...formData }
                 });
 
-                if (response.status !== 200) {
-                    throw new Error("Failed to submit form");
-                }
+
 
                 // Handle success (e.g., show a success message, redirect, etc.)
                 console.log("Form submitted successfully:", response.data);
