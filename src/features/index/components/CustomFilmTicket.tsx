@@ -97,14 +97,7 @@ export const CustomFilmTicket = () => {
                                 className="flex-1 flex items-center border-t justify-center py-2 xs:py-3 sm:py-0 transition-colors hover:bg-white/10 duration-300"
                             >
                                 <span className="uppercase text-xs xs:text-sm sm:text-base md:text-lg lg:text-xl font-secondary text-[#224095] font-semibold whitespace-nowrap">
-                                    <span>
-                                        3<span className="align-super text-[0.6em]">th</span>
-                                    </span>{" "}
-                                    -
-                                    <span>
-                                        5<span className="align-super text-[0.6em]">th</span>
-                                    </span>{" "}
-                                    June
+                                    June dates announcing soon
                                 </span>
                             </motion.div>
                         </div>
