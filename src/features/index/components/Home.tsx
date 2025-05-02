@@ -116,13 +116,17 @@ const juries = [
     },
     {
         name: "Himanshu Malik",
-        designation: "Actor & Screenwriter",
+        designation: "Actor, Director & screenwriter",
         imgSrc: "Himanshu_Malik.jpg"
     },
     {
         name: "Anirban Datta",
         designation: "Director & Screenwriter",
         imgSrc: "Anirban_Datta.jpg"
+    }, {
+        imgSrc: "Sunzu_Bachaspatimayum.png",
+        name: "Sunzu Bachaspatimayum",
+        designation: "Filmmaker & Journalist",
     }
 ];
 
