@@ -32,9 +32,13 @@ const partners = [
         label: "Regional Strategic Partner",
     },
     {
-        images: ["volunteer.png"],
+        images: ["/volunteer.png"],
         label: "Volunteer Partner",
     },
+    // {
+    //     images: ["/ai.png"],
+    //     label: "Ai-Films Awards",
+    // }
 ];
 
 

@@ -12,20 +12,9 @@ const OurPartners = React.lazy(() => import("./OurPartners"))
 
 const socialIcons = [
     {
-        id: 1,
-        imgSrc: "/linkedin.svg",
-    },
-    {
-        id: 2,
-        imgSrc: "/twitter.svg",
-    },
-    {
-        id: 3,
-        imgSrc: "/facebook.svg",
-    },
-    {
         id: 4,
         imgSrc: "/instagram.svg",
+        link: "https://www.instagram.com/dhrumafest"
     },
 ]
 
@@ -219,14 +208,16 @@ export const Home = () => {
                         transition={{ duration: 0.6, delay: 0.6 }}
                     >
                         {socialIcons.map((icon, index) => (
-                            <motion.img
-                                key={icon.id}
-                                src={`/icons/${icon.imgSrc}`}
-                                whileHover={{ scale: 1.2, rotate: 5 }}
-                                transition={{ type: "spring", stiffness: 500, damping: 10, duration: 0.3, delay: 0.6 + index * 0.1 }}
-                                initial={{ opacity: 0, scale: 0.8 }}
-                                animate={whoAreWeInView ? { opacity: 1, scale: 1 } : {}}
-                            />
+                            <Link to={icon.link} target="_blank" key={icon.id}>
+                                <motion.img
+                                    src={`/icons/${icon.imgSrc}`}
+                                    whileHover={{ scale: 1.2, rotate: 5 }}
+                                    transition={{ type: "spring", stiffness: 500, damping: 10, duration: 0.3, delay: 0.6 + index * 0.1 }}
+                                    initial={{ opacity: 0, scale: 0.8 }}
+                                    animate={whoAreWeInView ? { opacity: 1, scale: 1 } : {}}
+                                />
+                            </Link>
+
                         ))}
                     </motion.div>
                 </div>
