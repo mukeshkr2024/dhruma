@@ -162,6 +162,46 @@ export const Home = () => {
         <div className="w-full h-full bg-[url('/texture.svg')] bg-contain bg-no-repeat">
             <CustomFilmTicket />
 
+            <motion.section
+                className="section_primary flex-col md:flex-row px-4 md:px-0 gap-y-10"
+
+                ref={whoAreWeRef}
+                initial={{ opacity: 0, y: 50 }}
+                animate={whoAreWeInView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.6 }}
+            >
+                {/* left side */}
+                <div className="flex-1 text-start md:text-left">
+                    <motion.h2
+                        className="primary-heading mb-4"
+                        initial={{ opacity: 0, x: 30 }}
+                        animate={whoAreWeInView ? { opacity: 1, x: 0 } : {}}
+                        transition={{ duration: 0.6, delay: 0.2 }}
+                    >
+                        Celebrating Icons of Indian Cinema
+                    </motion.h2>
+                    <motion.p
+                        className="paragraph_primary"
+                        initial={{ opacity: 0 }}
+                        animate={whoAreWeInView ? { opacity: 1 } : {}}
+                        transition={{ duration: 0.6, delay: 0.4 }}
+                    >
+                        Join us in honoring legendary actress Moon Moon Sen, recipient of our Lifetime Achievement Award. Her presence — and the power of women in cinema — takes center stage at the Dhruma Film Festival 2025.
+                    </motion.p>
+                </div>
+
+                {/* right side */}
+                <motion.div
+                    className="flex flex-1 items-center justify-center gap-4"
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={whoAreWeInView ? { opacity: 1, y: 0 } : {}}
+                    transition={{ duration: 0.6, delay: 0.6 }}
+                >
+                    <img src="/moon-sen.png" alt="Moon Moon Sen" className="w-28 md:w-40 object-contain" />
+                    <img src="/riya-sen.png" alt="Riya Sen" className="w-28 md:w-40 object-contain" />
+                </motion.div>
+            </motion.section>
+
             {/* Who Are We Section */}
             <motion.section
                 className="section_primary flex-col md:flex-row px-4 md:px-0"
@@ -708,6 +748,6 @@ export const Home = () => {
             <div
                 className="w-full bg-[url(/hill.png)] bg-cover bg-no-repeat bg-center h-[200px] md:h-[300px] flex flex-col items-center justify-center"
             />
-        </div>
+        </div >
     )
 }

@@ -35,10 +35,10 @@ const partners = [
         images: ["/volunteer.png"],
         label: "Volunteer Partner",
     },
-    // {
-    //     images: ["/ai.png"],
-    //     label: "Ai-Films Awards",
-    // }
+    {
+        images: ["/ai.jpeg"],
+        label: "Ai-Films Awards",
+    }
 ];
 
 
