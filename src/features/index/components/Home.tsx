@@ -230,7 +230,7 @@ export const Home = () => {
                         transition={{ duration: 0.6, delay: 0.2 }}
                     >
                         Who <br />
-                        are we
+                        we are
                     </motion.h2>
                     <motion.p
                         className="paragraph_primary"
@@ -238,11 +238,7 @@ export const Home = () => {
                         animate={whoAreWeInView ? { opacity: 1 } : {}}
                         transition={{ duration: 0.6, delay: 0.4 }}
                     >
-                        Dhruma film festival celebrates diversity. A platform where every story, every perspective, and every voice
-                        matters. So even the smallest of voices don't go unheard. From every nook and corner of the world, we bring
-                        you tales of all ethnicities, genders, backgrounds, and experiences. A space where these diverse narratives
-                        come alive and are celebrated. Blend with them and give me a better more powerful intro with a vision and
-                        mission.
+                        At Dhruma Film Festival, we believe that every story deserves to be seen, heard, and celebrated. We are a global stage where diversity isn't just welcomed — it’s the very heart of who we are. From every corner of the world, we bring forward voices across ethnicities, genders, cultures, and experiences — ensuring that even the quietest stories find their light.
                     </motion.p>
 
                     <motion.div
@@ -290,11 +286,7 @@ export const Home = () => {
                         animate={submitFilmInView ? { opacity: 1 } : {}}
                         transition={{ duration: 0.6, delay: 0.4 }}
                     >
-                        Dhruma film festival celebrates diversity. A platform where every story, every perspective, and every voice
-                        matters. So even the smallest of voices don't go unheard. From every nook and corner of the world, we bring
-                        you tales of all ethnicities, genders, backgrounds, and experiences. A space where these diverse narratives
-                        come alive and are celebrated. Blend with them and give me a better more powerful intro with a vision and
-                        mission.
+                        Dhruma Film Festival invites creators from around the world to submit their cinematic works — stories crafted with passion, vision, and heart. Selected films will be screened at the festival, giving you the platform to share your voice, connect with audiences, and become part of a global celebration of storytelling.
                     </motion.p>
                     <Link to="/submit-film">
                         <motion.img
@@ -346,12 +338,7 @@ export const Home = () => {
                                 animate={{ opacity: 1 }}
                                 transition={{ duration: 0.6, delay: 0.6 }}
                             >
-                                DHRUMA Film Festival is a bold celebration of diversity, truth, and transformative storytelling. It is a
-                                platform where every story, every perspective, and every voice matters — ensuring that even the quietest
-                                voices are heard loud and clear. From bustling cities to the most remote corners of the world, DHRUMA
-                                curates and showcases films that span ethnicities, genders, cultures, and experiences. It is a sanctuary
-                                for stories that challenge, uplift, and inspire. A space where global narratives converge, collide, and
-                                come alive — unfiltered, unapologetic, and unforgettable.
+                                DHRUMA Film Festival is a bold celebration of diversity, truth, and transformative storytelling. It is a platform where every story, every perspective, and every voice matters — ensuring that even the quietest voices are heard loud and clear. From bustling cities to the most remote corners of the world, DHRUMA curates and showcases films that span ethnicities, genders, cultures, and experiences. It is a sanctuary for stories that challenge, uplift, and inspire. A space where global narratives converge, collide, and come alive — unfiltered, unapologetic, and unforgettable.
                             </motion.p>
                         </div>
                     </div>
@@ -396,7 +383,8 @@ export const Home = () => {
                         animate={missionInView ? { opacity: 1 } : {}}
                         transition={{ duration: 0.6, delay: 0.7 }}
                     >
-                        To amplify underrepresented voices through the universal language of film. <br />
+                        To amplify underrepresented voices through the universal language of film.
+                        <br />
                         To curate content that speaks to the heart, questions the norm, and transcends borders.
                         <br />
                         To create an inclusive festival that reflects the true spectrum of humanity — bold, beautiful, and diverse.
@@ -433,11 +421,9 @@ export const Home = () => {
                             animate={visionInView ? { opacity: 1 } : {}}
                             transition={{ duration: 0.6, delay: 0.5 }}
                         >
-                            To amplify underrepresented voices through the universal language of film. <br />
-                            To curate content that speaks to the heart, questions the norm, and transcends borders.
+                            To build a global stage where powerful stories from all walks of life find their audience.
                             <br />
-                            To create an inclusive festival that reflects the true spectrum of humanity — bold, beautiful, and
-                            diverse.
+                            We envision a world where cinema becomes a bridge — connecting communities, challenging norms, and celebrating the human spirit in all its forms.
                         </motion.p>
                     </div>
                 </motion.div>
@@ -483,8 +469,7 @@ export const Home = () => {
                             transition={{ duration: 0.4, delay: 0.5 }}
                         >
                             <img src="/icons/arrow_blue.svg" alt="" />
-                            Celebrate diverse and inclusive storytelling.
-                        </motion.li>
+                            Celebrate diverse and inclusive storytelling.                         </motion.li>
                         <motion.li
                             className="flex items-center gap-x-2 paragraph_primary"
                             initial={{ x: -20, opacity: 0 }}
@@ -492,8 +477,7 @@ export const Home = () => {
                             transition={{ duration: 0.4, delay: 0.6 }}
                         >
                             <img src="/icons/arrow_blue.svg" alt="" />
-                            Offer a global stage to emerging and underrepresented voices.
-                        </motion.li>
+                            Offer a global stage to emerging and underrepresented voices.                         </motion.li>
                         <motion.li
                             className="flex items-center gap-x-2 paragraph_primary"
                             initial={{ x: -20, opacity: 0 }}
@@ -501,8 +485,7 @@ export const Home = () => {
                             transition={{ duration: 0.4, delay: 0.7 }}
                         >
                             <img src="/icons/arrow_blue.svg" alt="" />
-                            Build cultural bridges through cinema.
-                        </motion.li>
+                            Build cultural bridges through cinema.                         </motion.li>
                     </motion.ul>
                 </div>
             </motion.section>

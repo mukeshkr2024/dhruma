@@ -4,19 +4,19 @@ const news = [
     {
         title: "New Feature Release",
         description: "We are excited to announce the release of our new feature that will enhance your experience.",
-        imageSrc: "/news/news1.jpeg",
+        imageSrc: "/news/news1.png",
     }, {
         title: "Maintenance Update",
         description: "Scheduled maintenance will occur on Saturday, 10 AM - 2 PM. Please plan accordingly.",
-        imageSrc: "/news/news2.jpeg",
+        imageSrc: "/news/news2.png",
     }, {
         title: "Community Event",
         description: "Join us for our upcoming community event on Friday at 5 PM. Don't miss out!",
-        imageSrc: "/news/news3.jpeg",
+        imageSrc: "/news/news3.png",
     }, {
         title: "New Partnership",
         description: "We are thrilled to announce our new partnership with XYZ Company to bring you even better services.",
-        imageSrc: "/news/news4.jpeg",
+        imageSrc: "/news/news4.png",
     },
 ]
 

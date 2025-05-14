@@ -37,11 +37,7 @@ export const BecomeSponsor = () => {
                         transition={{ duration: 0.6, delay: 0.6 }}
                         viewport={{ once: true }}
                     >
-                        The world craves meaningful content. Film, the universal language, sparks connection and change. At
-                        DHRUMA, we celebrate better cinema, stories, and content. <br />
-                        We invite bold, purpose-driven brands to shape the future of storytelling with us. Partner with DHRUMA to
-                        amplify unheard voices, champion diverse perspectives, and join a global movement transforming how the
-                        world sees, feels, and connects.
+                        The world craves meaningful content. Film, the universal language, sparks connection and change. At DHRUMA, we celebrate better cinema, stories, and content. We invite bold, purpose-driven brands to shape the future of storytelling with us. Partner with DHRUMA to amplify unheard voices, champion diverse perspectives, and join a global movement transforming how the world sees, feels, and connects.
                     </motion.p>
                 </div>
 
