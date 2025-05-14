@@ -2,11 +2,11 @@ import { motion } from "framer-motion"
 
 interface BlogCardProps {
     title: string
-    description: string
+    description?: string
     imgSrc: string
 }
 
-export const BlogCard = ({ title, description, imgSrc }: BlogCardProps) => {
+export const BlogCard = ({ title, imgSrc }: BlogCardProps) => {
     return (
         <motion.div
             className="flex h-full flex-col gap-y-2.5"
@@ -17,7 +17,7 @@ export const BlogCard = ({ title, description, imgSrc }: BlogCardProps) => {
                 <motion.img
                     src={imgSrc}
                     alt={title}
-                    className="h-[200px] w-full rounded-2xl object-cover
+                    className="h-[200px] aspect-video w-full rounded-2xl object-cover
                              sm:h-[250px]
                              md:h-[300px]
                              lg:h-[350px]"
@@ -25,7 +25,7 @@ export const BlogCard = ({ title, description, imgSrc }: BlogCardProps) => {
                     transition={{ duration: 0.3 }}
                 />
             </div>
-            <h3 className="font-primary line-clamp-2 mt-2 text-sm uppercase
+            {/* <h3 className="font-primary line-clamp-2 mt-2 text-sm uppercase
                           sm:text-base
                           md:text-lg
                           lg:text-xl">
@@ -35,7 +35,7 @@ export const BlogCard = ({ title, description, imgSrc }: BlogCardProps) => {
                          sm:text-sm
                          md:text-base">
                 {description}
-            </p>
+            </p> */}
         </motion.div>
     )
 }

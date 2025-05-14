@@ -47,7 +47,10 @@ const partners = [
     {
         images: ["/darjeeling.png"],
         label: ""
-    },
+    }, {
+        images: ["/act_logo.png"],
+        label: ""
+    }
 ];
 
 
