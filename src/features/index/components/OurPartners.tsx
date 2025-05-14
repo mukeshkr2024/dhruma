@@ -45,12 +45,13 @@ const partners = [
         label: "International Cultural Partner",
     },
     {
+        images: ["/act_logo.png"],
+        label: "Social Partner"
+    },
+    {
         images: ["/darjeeling.png"],
         label: ""
-    }, {
-        images: ["/act_logo.png"],
-        label: ""
-    }
+    },
 ];
 
 
