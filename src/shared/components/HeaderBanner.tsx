@@ -59,7 +59,7 @@ export const HeaderBanner = () => {
                                 whileTap={{ scale: 0.95 }}
                             >
                                 <Link to="/submit-film">
-                                    Film Submissions Open till 22nd May ⚡️ Click here to submit
+                                    Film Submissions Open till 28th May ⚡️ Click here to submit
                                 </Link>
                             </motion.div>
                         </motion.div>

@@ -15,7 +15,11 @@ const socialIcons = [
         id: 4,
         imgSrc: "/instagram.svg",
         link: "https://www.instagram.com/dhrumafest"
-    },
+    }, {
+        id: 3,
+        imgSrc: "/linkedin.svg",
+        link: "https://www.linkedin.com/company/levillageguypictures/posts/?feedView=all"
+    }
 ]
 
 const teams = [

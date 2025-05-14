@@ -38,6 +38,9 @@ const partners = [
     {
         images: ["/ai.jpeg"],
         label: "Ai-Films Awards",
+    }, {
+        images: ["/darjeeling.png"],
+        label: ""
     }
 ];
 

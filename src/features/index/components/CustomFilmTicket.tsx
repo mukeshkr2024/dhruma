@@ -122,8 +122,8 @@ function Counter() {
     })
 
     useEffect(() => {
-        // Set target date to June 3, 2025 (months are 0-indexed in JS)
-        const targetDate = new Date(2025, 5, 3); // June is month 5
+        // Set target date to 28th may ,2025 (months are 0-indexed in JS)
+        const targetDate = new Date(2025, 4, 28); // 28th May 2025
 
         const calculateTimeLeft = () => {
             const now = new Date()
