@@ -309,10 +309,10 @@ export const Home = () => {
                         />
                     </Link>
                 </div>
-                <div className="flex-1 flex justify-center md:justify-end items-center mb-8 md:mb-0">
+                <div className="flex-1 flex justify-center md:justify-end items-start mb-8 md:mb-0">
                     <motion.img
-                        src="/scene_take.png"
-                        className="w-[300px] md:w-[400px]"
+                        src="/cycle.jpg"
+                        className="w-[300px] md:w-[400px] md:-mt-20"
                         initial={{ opacity: 0, scale: 0.8 }}
                         animate={submitFilmInView ? { opacity: 1, scale: 1 } : {}}
                         transition={{ duration: 0.6, delay: 0.3, type: "spring", stiffness: 300, damping: 10 }}
