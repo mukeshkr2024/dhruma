@@ -7,14 +7,15 @@ const partners = [
         images: ["/Rail_black.png", "Indian_Railway_Heritage_Logo-14_–_Darjeeling_Himalayan_Railway_(NFR).png"],
         label: "Official Partner",
     },
+    {
+        images: ["/tourism_partner.png"],
+        label: "Tourism Partner",
+    },
     // {
     //     images: ["/admin.png"],
     //     label: "Operations Partner",
     // },
-    {
-        images: ["/TAHBIB.png"],
-        label: "International Cultural Partner",
-    },
+
     {
         images: ["/LE VILLAGE GUY.png"],
         label: "Production Partner",
@@ -40,9 +41,10 @@ const partners = [
         label: "Ai-Films Awards",
     },
     {
-        images: ["/tourism_partner.png"],
-        label: "Tourism Partner",
-    }, {
+        images: ["/TAHBIB.png"],
+        label: "International Cultural Partner",
+    },
+    {
         images: ["/darjeeling.png"],
         label: ""
     },
