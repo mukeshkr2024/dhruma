@@ -38,10 +38,14 @@ const partners = [
     {
         images: ["/ai.jpeg"],
         label: "Ai-Films Awards",
+    },
+    {
+        images: ["/tourism_partner.png"],
+        label: "Tourism Partner",
     }, {
         images: ["/darjeeling.png"],
         label: ""
-    }
+    },
 ];
 
 
