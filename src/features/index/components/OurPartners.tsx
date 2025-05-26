@@ -56,6 +56,10 @@ const partners = [
     images: ["/darjeeling.png"],
     label: ""
   },
+  {
+    images: ["/reign.jpeg"],
+    label: ""
+  }
 ];
 
 
