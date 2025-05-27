@@ -34,7 +34,7 @@ const teams = [
     name: "Adarsha Deshbhratar",
     role: "Co-Director",
   }, {
-    imgSrc: "alam_shah.jpeg",
+    imgSrc: "alam_shah.png",
     name: "Mohammad Alam Shah",
     role: "Head Intergovermental Ministerial Conciliation",
   },
