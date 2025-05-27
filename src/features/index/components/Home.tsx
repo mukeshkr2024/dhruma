@@ -33,6 +33,10 @@ const teams = [
     imgSrc: "Adarsha Deshbhratar.jpg",
     name: "Adarsha Deshbhratar",
     role: "Co-Director",
+  }, {
+    imgSrc: "alam_shah.jpeg",
+    name: "Mohammad Alam Shah",
+    role: "Head Intergovermental Ministerial Conciliation",
   },
   {
     imgSrc: "Joseph Barnett.jpg",
@@ -44,11 +48,11 @@ const teams = [
     name: "Shahrukh Aksari",
     role: "PR Director",
   },
-  {
-    imgSrc: "Sam Adtani.jpg",
-    name: "Sam Adtani",
-    role: "Growth Director",
-  },
+  // {
+  //   imgSrc: "Sam Adtani.jpg",
+  //   name: "Sam Adtani",
+  //   role: "Growth Director",
+  // },
   {
     imgSrc: "Mrittika Mukherjee.jpg",
     name: "Mrittika Mukherjee",
