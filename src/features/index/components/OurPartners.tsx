@@ -19,7 +19,6 @@ const partners = [
   //     images: ["/admin.png"],
   //     label: "Operations Partner",
   // },
-
   {
     images: ["/LE VILLAGE GUY.png"],
     label: "Production Partner",
@@ -59,7 +58,16 @@ const partners = [
   {
     images: ["/reign.jpeg"],
     label: ""
-  }
+  }, {
+    images: ["/doke.jpg"],
+    label: "Merchandise partner"
+  }, {
+    images: ["/lochan.jpg"],
+    label: "Merchandise partner"
+  }, {
+    images: ["/salon85.jpg"],
+    label: ""
+  },
 ];
 
 
