@@ -1,4 +1,3 @@
-
 import React, { Suspense, useRef } from "react"
 import { motion, useInView, useScroll, useTransform } from "framer-motion"
 import { CustomFilmTicket } from "./CustomFilmTicket"
@@ -164,6 +163,54 @@ export const Home = () => {
   return (
     <div className="w-full h-full bg-[url('/texture.svg')] bg-contain bg-no-repeat">
       <CustomFilmTicket />
+      {/* Screening Schedule Section */}
+      <motion.section
+        className="section_primary flex flex-col items-center justify-center  px-4 md:px-0"
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true, amount: 0.3 }}
+      >
+        <div className="flex-1 flex flex-col items-center text-center gap-y-6">
+          <motion.h2
+            className="primary-heading"
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            viewport={{ once: true, amount: 0.3 }}
+          >
+            Screening Schedule
+          </motion.h2>
+
+          <motion.div
+            className="space-y-6"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            viewport={{ once: true, amount: 0.3 }}
+          >
+            <div className="space-y-2">
+              <h3 className="font-primary text-lg font-semibold">June 13 – Kurseong Station</h3>
+              <p className="paragraph_primary">6:00 PM – 8:00 PM</p>
+            </div>
+
+            <div className="space-y-2">
+              <h3 className="font-primary text-lg font-semibold">June 14 – Kurseong & Darjeeling</h3>
+              <div className="space-y-1">
+                <p className="paragraph_primary">Kurseong, Elysia Museum: 10:00 AM – 12:00 PM</p>
+                <p className="paragraph_primary">Darjeeling: 12:00 PM – 5:00 PM</p>
+                <p className="paragraph_primary">Kurseong Station: 6:00 PM – 8:30 PM</p>
+              </div>
+            </div>
+
+            <div className="space-y-2">
+              <h3 className="font-primary text-lg font-semibold">June 15 – Siliguri</h3>
+              <p className="paragraph_primary">10:00 AM – 8:00 PM</p>
+            </div>
+          </motion.div>
+        </div>
+      </motion.section>
+
 
       <motion.section
         className="section_primary flex-col md:flex-row px-4 md:px-0 gap-y-10"
@@ -237,7 +284,7 @@ export const Home = () => {
             animate={whoAreWeInView ? { opacity: 1 } : {}}
             transition={{ duration: 0.6, delay: 0.4 }}
           >
-            At Dhruma Film Festival, we believe that every story deserves to be seen, heard, and celebrated. We are a global stage where diversity isn't just welcomed — it’s the very heart of who we are. From every corner of the world, we bring forward voices across ethnicities, genders, cultures, and experiences — ensuring that even the quietest stories find their light.
+            At Dhruma Film Festival, we believe that every story deserves to be seen, heard, and celebrated. We are a global stage where diversity isn't just welcomed — it's the very heart of who we are. From every corner of the world, we bring forward voices across ethnicities, genders, cultures, and experiences — ensuring that even the quietest stories find their light.
           </motion.p>
 
           <motion.div
@@ -299,6 +346,17 @@ export const Home = () => {
               animate={submitFilmInView ? { opacity: 1, y: 0 } : {}}
             />
           </Link>
+
+          <motion.img
+            src="/blue_french.jpg"
+            alt="Submit"
+            className=" w-full md:w-[80%] cursor-pointer"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            transition={{ type: "spring", stiffness: 400, damping: 10, duration: 0.6, delay: 0.6 }}
+            initial={{ opacity: 0, y: 20 }}
+            animate={submitFilmInView ? { opacity: 1, y: 0 } : {}}
+          />
         </div>
         <div className="flex-1 flex justify-center md:justify-end items-start mb-8 md:mb-0">
           <motion.img
@@ -311,6 +369,7 @@ export const Home = () => {
           />
         </div>
       </motion.section>
+
 
       {/* Black Circle Section */}
       <div className="md:flex hidden w-full z-0 items-center justify-center -mb-[250px] md:-mb-[480px]" ref={targetRef}>
