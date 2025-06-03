@@ -419,7 +419,7 @@ export const Home = () => {
       >
         <div className="w-full md:w-[45%]">
           <motion.img
-            src="/mission_img.png"
+            src="/mission_1.jpeg"
             alt="mission image"
             className="w-full h-full object-cover"
             initial={{ x: -50, opacity: 0 }}
@@ -493,7 +493,7 @@ export const Home = () => {
         </motion.div>
         <div className="w-full md:w-[45%]">
           <motion.img
-            src="/vision_img.png"
+            src="/vision_1.jpeg"
             alt="vision image"
             className="w-full h-full object-cover"
             initial={{ x: 50, opacity: 0 }}

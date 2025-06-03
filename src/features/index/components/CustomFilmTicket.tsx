@@ -61,7 +61,9 @@ export const CustomFilmTicket = () => {
             variants={itemVariants}
             className="pt-1 xs:pt-5 sm:pt-8 md:pt-12 mr-2 xs:mr-4 sm:mr-6 md:mr-10 transition-transform hover:scale-105 duration-300"
           >
-            <h2 className="primary-heading hidden md:flex text-lg xs:text-xl sm:text-2xl md:text-3xl">REGISTER</h2>
+            <h2 className="primary-heading hidden md:flex text-lg xs:text-xl  text-center">
+              Date Announcing <br /> Soon
+            </h2>
           </motion.div>
         </div>
 
@@ -96,13 +98,15 @@ export const CustomFilmTicket = () => {
                 variants={itemVariants}
                 className="flex-1 flex items-center border-t justify-center py-2 xs:py-3 sm:py-0 transition-colors hover:bg-white/10 duration-300"
               >
-                <span className="uppercase text-xs xs:text-sm sm:text-base md:text-lg lg:text-xl font-secondary text-[#224095] font-semibold whitespace-nowrap">
+                {/* <span className="uppercase text-xs xs:text-sm sm:text-base md:text-lg lg:text-xl font-secondary text-[#224095] font-semibold whitespace-nowrap">
                   June dates announcing soon
-                </span>
+                </span> */}
               </motion.div>
             </div>
           </div>
-          <h2 className="primary-heading flex md:hidden text-lg xs:text-xl sm:text-2xl md:text-3xl">REGISTER</h2>
+          <h2 className="primary-heading flex md:hidden text-lg xs:text-xl text-center">
+            Date Announcing <br /> Soon
+          </h2>
           {/* Right side - counter */}
           <div className="w-full sm:w-[35%] lg:w-[30%]">
             <Counter />
@@ -123,7 +127,7 @@ function Counter() {
 
   useEffect(() => {
     // Set target date to 28th may ,2025 (months are 0-indexed in JS)
-    const targetDate = new Date(2025, 4, 28); // 28th May 2025
+    const targetDate = new Date(2025, 5, 13); // 13th June 2025
 
     const calculateTimeLeft = () => {
       const now = new Date()
