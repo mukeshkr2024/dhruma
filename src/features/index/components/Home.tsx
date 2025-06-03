@@ -191,7 +191,10 @@ export const Home = () => {
           >
             <div className="space-y-2">
               <h3 className="font-primary text-lg font-semibold">June 13 – Kurseong Station</h3>
-              <p className="paragraph_primary">6:00 PM – 8:00 PM</p>
+              <p className="paragraph_primary">5:00 PM – 8:00 PM</p>
+              <p className="paragraph_primary">
+                Toy train Kurseong, Special Screening for School Children:  5:00- 5:30PM
+              </p>
             </div>
 
             <div className="space-y-2">
@@ -200,6 +203,9 @@ export const Home = () => {
                 <p className="paragraph_primary">Kurseong, Elysia Museum: 10:00 AM – 12:00 PM</p>
                 <p className="paragraph_primary">Darjeeling: 12:00 PM – 5:00 PM</p>
                 <p className="paragraph_primary">Kurseong Station: 6:00 PM – 8:30 PM</p>
+                <p className="paragraph_primary">
+                  Toy Train Kurseong, Special Screening for Journalists: 5:00- 5:30 PM
+                </p>
               </div>
             </div>
 
