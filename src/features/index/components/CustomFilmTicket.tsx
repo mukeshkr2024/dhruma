@@ -88,11 +88,11 @@ export const CustomFilmTicket = () => {
                 <span className="uppercase text-xs xs:text-sm sm:text-base md:text-lg lg:text-xl font-secondary text-[#224095] font-semibold">
                   3 Day
                 </span>
-                <img
+                {/* <img
                   src="/stamp_img.svg"
                   alt=""
                   className="hidden sm:block size-20 md:size-24 lg:size-32 absolute bottom-2 sm:bottom-4 -right-[30px] sm:-right-[45px] md:-right-[62px]"
-                />
+                /> */}
               </motion.div>
               <motion.div
                 variants={itemVariants}
