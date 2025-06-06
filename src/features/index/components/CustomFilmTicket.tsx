@@ -61,9 +61,9 @@ export const CustomFilmTicket = () => {
             variants={itemVariants}
             className="pt-1 xs:pt-5 sm:pt-8 md:pt-12 mr-2 xs:mr-4 sm:mr-6 md:mr-10 transition-transform hover:scale-105 duration-300"
           >
-            <h2 className="primary-heading hidden md:flex text-lg xs:text-xl  text-center">
+            {/* <h2 className="primary-heading hidden md:flex text-lg xs:text-xl  text-center">
               Date Announcing <br /> Soon
-            </h2>
+            </h2> */}
           </motion.div>
         </div>
 
@@ -104,9 +104,9 @@ export const CustomFilmTicket = () => {
               </motion.div>
             </div>
           </div>
-          <h2 className="primary-heading flex md:hidden text-lg xs:text-xl text-center">
+          {/* <h2 className="primary-heading flex md:hidden text-lg xs:text-xl text-center">
             Date Announcing <br /> Soon
-          </h2>
+          </h2> */}
           {/* Right side - counter */}
           <div className="w-full sm:w-[35%] lg:w-[30%]">
             <Counter />
