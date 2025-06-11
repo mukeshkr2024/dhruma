@@ -731,7 +731,7 @@ export const Home = () => {
         </motion.div>
       </motion.section>
       <Suspense fallback={<LoadingFallback />}>
-        <FeaturedFilms label="Featured Films" />
+        <FeaturedFilms label="Official Selected Films" />
       </Suspense>
       <OurPartners />
       <BecomeSponsor />
