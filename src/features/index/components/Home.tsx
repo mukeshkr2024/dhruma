@@ -130,6 +130,7 @@ const scheduleImages = [
   "/schedule/6.png",
   "/schedule/7.png",
   "/schedule/8.png",
+  "/schedule/9.jpeg",
 ]
 
 
@@ -176,7 +177,7 @@ export const Home = () => {
       <CustomFilmTicket />
       {/* Screening Schedule Section */}
       <motion.section
-        className="section_primary flex flex-col items-center justify-center  px-4 md:px-0"
+        className="section_primary flex flex-col items-center justify-center px-4 md:px-0"
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
@@ -201,28 +202,22 @@ export const Home = () => {
             viewport={{ once: true, amount: 0.3 }}
           >
             <div className="space-y-2">
-              <h3 className="font-primary text-lg font-semibold">June 13 – Kurseong Station</h3>
-              <p className="paragraph_primary">5:00 PM – 8:00 PM</p>
-              <p className="paragraph_primary">
-                Toy train Kurseong, Special Screening for School Children:  5:00- 5:30PM
-              </p>
+              <h3 className="font-primary text-lg font-semibold">June 13 – Kurseong</h3>
+              <p className="paragraph_primary">Elysia Museum: 3:30 PM – 4:30 PM</p>
+              <p className="paragraph_primary">Toy Train Station: 5:00 PM – 8:00 PM</p>
             </div>
 
             <div className="space-y-2">
-              <h3 className="font-primary text-lg font-semibold">June 14 – Kurseong & Darjeeling</h3>
+              <h3 className="font-primary text-lg font-semibold">June 14 – Darjeeling & Kurseong</h3>
               <div className="space-y-1">
-                <p className="paragraph_primary">Kurseong, Elysia Museum: 10:00 AM – 12:00 PM</p>
-                <p className="paragraph_primary">Darjeeling: 12:00 PM – 5:00 PM</p>
-                <p className="paragraph_primary">Kurseong Station: 6:00 PM – 8:30 PM</p>
-                <p className="paragraph_primary">
-                  Toy Train Kurseong, Special Screening for Journalists: 5:00- 5:30 PM
-                </p>
+                <p className="paragraph_primary">RKSP School, Darjeeling: 10:00 AM – 4:00 PM</p>
+                <p className="paragraph_primary">Toy Train Station, Kurseong: 5:00 PM – 8:00 PM</p>
               </div>
             </div>
 
             <div className="space-y-2">
               <h3 className="font-primary text-lg font-semibold">June 15 – Siliguri</h3>
-              <p className="paragraph_primary">10:00 AM – 8:00 PM</p>
+              <p className="paragraph_primary">The Cindrella Hotel: 11:00 AM – 8:00 PM</p>
             </div>
           </motion.div>
         </div>
@@ -249,7 +244,7 @@ export const Home = () => {
             viewport={{ once: true, amount: 0.3 }}
           >
             {/* Responsive Image Grid */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 ">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3  gap-4 ">
               {scheduleImages?.map((img, index) => (
                 <motion.img
                   key={index}
