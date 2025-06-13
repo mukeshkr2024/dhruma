@@ -47,6 +47,7 @@ const images = [
   "The world is in our hands.JPG",
   "TheMarsNovella IGPoster wDhrumaFF.png",
   "Virtual Strangers - Poster 1080X1080 - v01.png",
+  "465178494_8845066285544980_6241852167358797281_n.jpg"
 ].map(file => imageBaseUrl + encodeURIComponent(file));
 
 

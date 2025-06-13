@@ -121,6 +121,17 @@ const juries = [
   }
 ];
 
+const scheduleImages = [
+  "/schedule/1.png",
+  "/schedule/2.png",
+  "/schedule/3.png",
+  "/schedule/4.png",
+  "/schedule/5.png",
+  "/schedule/6.png",
+  "/schedule/7.png",
+  "/schedule/8.png",
+]
+
 
 const LoadingFallback = () => (
   <div className="flex justify-center items-center py-20">
@@ -217,6 +228,42 @@ export const Home = () => {
         </div>
       </motion.section>
 
+      {/* schedule section */}
+      <motion.section className="px-4 py-10 sm:px-6 md:px-10 lg:px-16">
+        <div className="flex-1 flex flex-col items-center text-center gap-y-6 max-w-6xl mx-auto">
+          <motion.h2
+            className="primary-heading text-3xl sm:text-4xl md:text-5xl font-bold"
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            viewport={{ once: true, amount: 0.3 }}
+          >
+            Schedule
+          </motion.h2>
+
+          <motion.div
+            className="space-y-6 w-full mt-4"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            viewport={{ once: true, amount: 0.3 }}
+          >
+            {/* Responsive Image Grid */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 ">
+              {scheduleImages?.map((img, index) => (
+                <motion.img
+                  key={index}
+                  src={img}
+                  alt={`schedule-${index}`}
+                  // className="w-full h-48 sm:h-56 md:h-60 object-cover rounded-lg shadow-sm"
+                  className="w-full h-full object-cover rounded-lg shadow-sm"
+                  whileHover={{ scale: 1.03 }}
+                />
+              ))}
+            </div>
+          </motion.div>
+        </div>
+      </motion.section>
 
       <motion.section
         className="section_primary flex-col md:flex-row px-4 md:px-0 gap-y-10"

@@ -1,5 +1,5 @@
 import { motion, useAnimation, useInView } from "framer-motion"
-import { useEffect, useState, useRef } from "react"
+import { useEffect, useRef } from "react"
 
 export const CustomFilmTicket = () => {
   const controls = useAnimation()
@@ -108,105 +108,105 @@ export const CustomFilmTicket = () => {
             Date Announcing <br /> Soon
           </h2> */}
           {/* Right side - counter */}
-          <div className="w-full sm:w-[35%] lg:w-[30%]">
+          {/* <div className="w-full sm:w-[35%] lg:w-[30%]">
             <Counter />
-          </div>
+          </div> */}
         </div>
       </div>
     </motion.section>
   )
 }
 
-function Counter() {
-  const [timeLeft, setTimeLeft] = useState({
-    days: 0,
-    hours: 0,
-    minutes: 0,
-    seconds: 0,
-  })
+// function Counter() {
+//   const [timeLeft, setTimeLeft] = useState({
+//     days: 0,
+//     hours: 0,
+//     minutes: 0,
+//     seconds: 0,
+//   })
 
-  useEffect(() => {
-    // Set target date to 28th may ,2025 (months are 0-indexed in JS)
-    const targetDate = new Date(2025, 5, 13); // 13th June 2025
+//   useEffect(() => {
+//     // Set target date to 28th may ,2025 (months are 0-indexed in JS)
+//     const targetDate = new Date(2025, 5, 13); // 13th June 2025
 
-    const calculateTimeLeft = () => {
-      const now = new Date()
-      const distance = targetDate.getTime() - now.getTime()
+//     const calculateTimeLeft = () => {
+//       const now = new Date()
+//       const distance = targetDate.getTime() - now.getTime()
 
-      if (distance < 0) {
-        return { days: 0, hours: 0, minutes: 0, seconds: 0 }
-      }
+//       if (distance < 0) {
+//         return { days: 0, hours: 0, minutes: 0, seconds: 0 }
+//       }
 
-      const days = Math.floor(distance / (1000 * 60 * 60 * 24))
-      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))
-      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60))
-      const seconds = Math.floor((distance % (1000 * 60)) / 1000)
+//       const days = Math.floor(distance / (1000 * 60 * 60 * 24))
+//       const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))
+//       const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60))
+//       const seconds = Math.floor((distance % (1000 * 60)) / 1000)
 
-      return { days, hours, minutes, seconds }
-    }
+//       return { days, hours, minutes, seconds }
+//     }
 
-    setTimeLeft(calculateTimeLeft())
+//     setTimeLeft(calculateTimeLeft())
 
-    const interval = setInterval(() => {
-      setTimeLeft(calculateTimeLeft())
-    }, 1000)
+//     const interval = setInterval(() => {
+//       setTimeLeft(calculateTimeLeft())
+//     }, 1000)
 
-    return () => clearInterval(interval)
-  }, [])
+//     return () => clearInterval(interval)
+//   }, [])
 
-  const counterVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: { duration: 0.5, delay: 0.3 },
-    },
-  }
+//   const counterVariants = {
+//     hidden: { opacity: 0 },
+//     visible: {
+//       opacity: 1,
+//       transition: { duration: 0.5, delay: 0.3 },
+//     },
+//   }
 
-  return (
-    <motion.div
-      className="flex items-center justify-center py-4 sm:py-0 sm:mt-0 w-full"
-      variants={counterVariants}
-    >
-      <div className="flex flex-col sm:flex-row items-center w-full">
-        {/* Labels row - only shown on mobile */}
-        <div className="flex sm:hidden w-full justify-between px-4 mb-1">
-          <span className="text-gray-500 text-[10px] xs:text-xs">DAY</span>
-          <span className="text-gray-500 text-[10px] xs:text-xs">HOUR</span>
-          <span className="text-gray-500 text-[10px] xs:text-xs">MIN</span>
-          <span className="text-gray-500 text-[10px] xs:text-xs">SEC</span>
-        </div>
+//   return (
+//     <motion.div
+//       className="flex items-center justify-center py-4 sm:py-0 sm:mt-0 w-full"
+//       variants={counterVariants}
+//     >
+//       <div className="flex flex-col sm:flex-row items-center w-full">
+//         {/* Labels row - only shown on mobile */}
+//         <div className="flex sm:hidden w-full justify-between px-4 mb-1">
+//           <span className="text-gray-500 text-[10px] xs:text-xs">DAY</span>
+//           <span className="text-gray-500 text-[10px] xs:text-xs">HOUR</span>
+//           <span className="text-gray-500 text-[10px] xs:text-xs">MIN</span>
+//           <span className="text-gray-500 text-[10px] xs:text-xs">SEC</span>
+//         </div>
 
-        {/* Counter values */}
-        <div className="flex w-full justify-between sm:justify-center space-x-1 xs:space-x-1.5 sm:space-x-2 px-4 sm:px-0">
-          <div className="flex flex-col items-center">
-            <span className="text-[#ff3b31] text-lg xs:text-xl sm:text-2xl md:text-3xl font-bold">
-              {String(timeLeft.days).padStart(2, "0")}
-            </span>
-            <span className="hidden sm:block text-gray-500 text-[10px] xs:text-xs sm:text-sm">DAY</span>
-          </div>
-          <span className="text-[#ff3b31] text-lg xs:text-xl sm:text-2xl md:text-3xl font-bold">:</span>
-          <div className="flex flex-col items-center">
-            <span className="text-[#ff3b31] text-lg xs:text-xl sm:text-2xl md:text-3xl font-bold">
-              {String(timeLeft.hours).padStart(2, "0")}
-            </span>
-            <span className="hidden sm:block text-gray-500 text-[10px] xs:text-xs sm:text-sm">HOUR</span>
-          </div>
-          <span className="text-[#ff3b31] text-lg xs:text-xl sm:text-2xl md:text-3xl font-bold">:</span>
-          <div className="flex flex-col items-center">
-            <span className="text-[#ff3b31] text-lg xs:text-xl sm:text-2xl md:text-3xl font-bold">
-              {String(timeLeft.minutes).padStart(2, "0")}
-            </span>
-            <span className="hidden sm:block text-gray-500 text-[10px] xs:text-xs sm:text-sm">MIN</span>
-          </div>
-          <span className="text-[#ff3b31] text-lg xs:text-xl sm:text-2xl md:text-3xl font-bold">:</span>
-          <div className="flex flex-col items-center">
-            <span className="text-[#ff3b31] text-lg xs:text-xl sm:text-2xl md:text-3xl font-bold">
-              {String(timeLeft.seconds).padStart(2, "0")}
-            </span>
-            <span className="hidden sm:block text-gray-500 text-[10px] xs:text-xs sm:text-sm">SEC</span>
-          </div>
-        </div>
-      </div>
-    </motion.div>
-  )
-}
+//         {/* Counter values */}
+//         <div className="flex w-full justify-between sm:justify-center space-x-1 xs:space-x-1.5 sm:space-x-2 px-4 sm:px-0">
+//           <div className="flex flex-col items-center">
+//             <span className="text-[#ff3b31] text-lg xs:text-xl sm:text-2xl md:text-3xl font-bold">
+//               {String(timeLeft.days).padStart(2, "0")}
+//             </span>
+//             <span className="hidden sm:block text-gray-500 text-[10px] xs:text-xs sm:text-sm">DAY</span>
+//           </div>
+//           <span className="text-[#ff3b31] text-lg xs:text-xl sm:text-2xl md:text-3xl font-bold">:</span>
+//           <div className="flex flex-col items-center">
+//             <span className="text-[#ff3b31] text-lg xs:text-xl sm:text-2xl md:text-3xl font-bold">
+//               {String(timeLeft.hours).padStart(2, "0")}
+//             </span>
+//             <span className="hidden sm:block text-gray-500 text-[10px] xs:text-xs sm:text-sm">HOUR</span>
+//           </div>
+//           <span className="text-[#ff3b31] text-lg xs:text-xl sm:text-2xl md:text-3xl font-bold">:</span>
+//           <div className="flex flex-col items-center">
+//             <span className="text-[#ff3b31] text-lg xs:text-xl sm:text-2xl md:text-3xl font-bold">
+//               {String(timeLeft.minutes).padStart(2, "0")}
+//             </span>
+//             <span className="hidden sm:block text-gray-500 text-[10px] xs:text-xs sm:text-sm">MIN</span>
+//           </div>
+//           <span className="text-[#ff3b31] text-lg xs:text-xl sm:text-2xl md:text-3xl font-bold">:</span>
+//           <div className="flex flex-col items-center">
+//             <span className="text-[#ff3b31] text-lg xs:text-xl sm:text-2xl md:text-3xl font-bold">
+//               {String(timeLeft.seconds).padStart(2, "0")}
+//             </span>
+//             <span className="hidden sm:block text-gray-500 text-[10px] xs:text-xs sm:text-sm">SEC</span>
+//           </div>
+//         </div>
+//       </div>
+//     </motion.div>
+//   )
+// }
