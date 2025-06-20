@@ -64,9 +64,6 @@ const partners = [
   }, {
     images: ["/lochan.jpg"],
     label: "Merchandise partner"
-  }, {
-    images: ["/salon85.jpg"],
-    label: ""
   },
 ];
 
